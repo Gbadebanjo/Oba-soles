@@ -1,13 +1,17 @@
 import './App.css';
-import layout from './Components/layout/Layout';
-import Navbar from "./Components/navbar/Navbar"
+import { Routes, Route } from "react-router-dom";
+import Home from './Components/home/Home.jsx';
+import Product from './Components/product/Product.jsx';
+import Layout from './Components/layout/Layout';
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <layout />
-    </div>
+    <Layout>
+      <Routes>
+        <Route index element={<Home/>} />
+        <Route path='/product' element={<Product />} />
+      </Routes>
+    </Layout>
   );
 }
 

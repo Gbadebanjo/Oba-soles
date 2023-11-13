@@ -1,11 +1,18 @@
-import Navbar from "../navbar/Navbar"
+import Navbar from "../navbar/Navbar";
+import styled from "styled-components";
+// import Footer from "../footer/Footer";
 
-const Layout = () => {
+const container = styled.div`
+height: 100vh;
+`;
+const Layout = ({ children }) => {
   return (
-    <div>
-        <Navbar/>
-    </div>
-  )
+    <container>
+      <Navbar/>
+      {children}
+      {/* <Footer/> */}
+    </container>
+  );
 }
 
-export default Layout
+export default Layout;

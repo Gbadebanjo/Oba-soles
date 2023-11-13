@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from 'react-router-dom';
 
 const NavContainer = styled.div`
   display: flex;
@@ -26,7 +27,7 @@ const NavLinks = styled.ul`
   list-style: none;
 `;
 
-const NavItems = styled.a`
+const NavItems = styled(NavLink)`
   text-decoration: none;
   color: #efefef;
   font-size: 1.2rem;
@@ -35,6 +36,9 @@ const NavItems = styled.a`
   &:hover {
     color: #ee0000;
     cursor: pointer;
+  }
+  &.active {
+    color: #ee0000;
   }
 `;
 
@@ -62,11 +66,11 @@ const Navbar = () => {
       <NavContainer>
         <BrandName>ObaSoles</BrandName>
         <NavLinks>
-          <NavItems href="/">Home</NavItems>
-          <NavItems href="/products">Products</NavItems>
-          <NavItems href="/about">About</NavItems>
-          <NavItems href="/contact">Contact</NavItems>
-          <NavItems href="/blog">Blog</NavItems>
+        <NavItems to="/" exact>Home</NavItems>
+          <NavItems to="/product">Product</NavItems>
+          <NavItems to="/about">About</NavItems>
+          <NavItems to="/contact">Contact</NavItems>
+          <NavItems to="/blog">Blog</NavItems>
         </NavLinks>
         <CartContainer>
           <FontAwesomeIcon icon={faShoppingCart} />

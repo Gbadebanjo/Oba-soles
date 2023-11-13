@@ -1,9 +1,12 @@
 import './App.css';
+import layout from './Components/layout/Layout';
+import Navbar from "./Components/navbar/Navbar"
 
 function App() {
   return (
     <div>
-      <h1>Oba Soles</h1>
+      <Navbar />
+      <layout />
     </div>
   );
 }

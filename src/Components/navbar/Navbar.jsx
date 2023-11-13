@@ -10,6 +10,7 @@ const NavContainer = styled.div`
   align-items: center;
   padding: 1rem rem;
   background-color: #232323;
+  // position: fixed;
 `;
 
 const BrandName = styled.h1`

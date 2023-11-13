@@ -2,17 +2,17 @@ import Navbar from "../navbar/Navbar";
 import styled from "styled-components";
 // import Footer from "../footer/Footer";
 
-const container = styled.div`
-height: 100vh;
+const Container = styled.div`
+  height: 100vh;
 `;
 const Layout = ({ children }) => {
   return (
-    <container>
-      <Navbar/>
+    <Container>
+      <Navbar />
       {children}
       {/* <Footer/> */}
-    </container>
+    </Container>
   );
-}
+};
 
 export default Layout;

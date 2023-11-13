@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import SectionOne from "./SectionOne";
 
 
 const Home = () => {
   return (
     <>
-      <h1>Home</h1>
+      <SectionOne/>
     </>
   );
 };

@@ -8,9 +8,17 @@ const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem rem;
+  padding: 1rem 1rem;
   background-color: #232323;
-  // position: fixed;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  opacity: 0.9; // to make the navbar semi-transparent
+  transition: opacity 0.3s ease; // animate the opacity change
+
+  &:hover {
+    opacity: 1; // make the navbar fully visible when the mouse hovers over it
+  }
 `;
 
 const BrandName = styled.h1`
@@ -21,6 +29,7 @@ const BrandName = styled.h1`
   color: #ee0000;
   text-shadow: 0.1rem 0.1rem 0.1rem #000;
   padding: 0 1rem;
+  margin-left: 1%; 
 `;
 
 const NavLinks = styled.ul`

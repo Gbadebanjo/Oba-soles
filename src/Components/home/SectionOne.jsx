@@ -58,7 +58,7 @@ const Button = styled.button`
 const SectionOne = () => {
   return (
     <Container>
-      <Discount>Get Discount Sales</Discount>
+      <Discount>Get Amazing Discount %</Discount>
       <Story>
         Get Favorite Shoes & <br />
         Enjoy Your Journey

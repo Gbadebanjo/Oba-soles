@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPercent } from "@fortawesome/free-solid-svg-icons";
 import Cart from "../../Image/browncart.png";
-import Seed from "../../Image/icons8-seed-96.png";
+import Seed from "../../Image/icons8-seed-48.png";
+import Percentage from "../../Image/icons8-percentage-80.png";
 
 const Container = styled.div`
   height: 50%;
@@ -15,12 +14,42 @@ const Container = styled.div`
   align-items: center;
 `;
 
+const BoxImg = styled.div`
+  font-size: 70px;
+  margin-left: 40px;
+  margin-top: 30px;
+  font-weight: bold;
+  background-position: right bottom;
 
+  img {
+    filter: sepia(1); // make the image brown
+  }
 
+  &:hover img {
+    filter: invert(1); // make the image white on hover
+  }
+`;
+
+const BoxText = styled.p`
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 40px;
+`;
+
+const BoxLink = styled.a`
+  // text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  font-weight: 600;
+  margin-left: 40px;
+  color: #823f27;
+  &:hover {
+    color: #fff;
+  }
+`;
 const Box = styled.div`
   height: 250px;
   width: 25%;
-  
   margin: 20px;
   border-radius: 10px;
   box-shadow: 0px -1px 15px -5px #a8a4a4;
@@ -38,59 +67,45 @@ const Box = styled.div`
     cursor: pointer;
     color: #fff;
     background-color: #823f27;
+
+    ${BoxImg} img {
+      filter: invert(1); // make the image white on hover
+    }
+
+    ${BoxLink} {
+      color: #fff;
+    }
   }
 `;
 
-const BoxImg = styled.div`
-  font-size: 70px;
-  margin-left: 30px;
-  font-weight: bold;
-  background-position: right bottom;
 
-  img {
-    filter: sepia(1); // make the image brown
-  }
-
-  &:hover img {
-    filter: invert(1); // make the image white on hover
-  }
-`;
-
-const BoxText = styled.p`
-  font-size: 20px;
-  font-weight: 600;
-  margin-left: 30px;
-//   color: #fff;
-
-`;
-
-const BoxLink = styled.a`
-text-decoration: none;
-font-size: 20px;
-font-weight: 600;
-margin-left: 30px;
-
-`
 
 const SectionTwo = () => {
   return (
     <Container>
       <Box>
-      <BoxImg>%</BoxImg>
+        {/* <BoxImg>%</BoxImg> */}
+        <BoxImg>
+          <img src={Percentage} alt="percentage" />
+        </BoxImg>
+
         <BoxText>Get Up To 5% Discount</BoxText>
         <BoxLink href="/product">Shop Now</BoxLink>
       </Box>
       <Box>
-        <BoxImg><img src={Cart} alt="cart"/></BoxImg>
+        <BoxImg>
+          <img src={Cart} alt="cart" />
+        </BoxImg>
         <BoxText>New Arrivals</BoxText>
         <BoxLink href="/product">Shop Now</BoxLink>
       </Box>
       <Box>
-      <BoxImg><img src={Seed} alt="seed"/></BoxImg>
+        <BoxImg>
+          <img src={Seed} alt="seed" />
+        </BoxImg>
         <BoxText>Best Selling Products</BoxText>
         <BoxLink href="/product">Shop Now</BoxLink>
       </Box>
-      
     </Container>
   );
 };

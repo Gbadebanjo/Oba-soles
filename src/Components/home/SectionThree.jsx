@@ -4,20 +4,17 @@ import ObaImg from "../../Image/ObaDesign2.jpg";
 const Container = styled.div`
   height: 70vh;
   width: 100%;
-  // align-items: center;
-  
-  
+  display: flex;
+  flex-wrap: wrap;
 `;
 const Description = styled.div`
-  // position: relative;
-  // z-index: 1;
   width: 50%;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px;
   float: left;
-  // box-sizing: border-box;
+  box-sizing: border-box;
 `;
 
 const Text = styled.h1`
@@ -28,31 +25,27 @@ const Text = styled.h1`
 `;
 
 const DesignBox = styled.div`
-position: relative;
-// height: 50%;
-width: 50%;
-float: right;
+  height: 70vh;
+  width: 50%;
 
-object-position: center;
-object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-image: url(${ObaImg});
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex-direction: column;
+  background-attachment: fixed;
 `;
 
-const DesignImg = styled.img`
-position: absolute;
-top: 0;
-height: 100%;
-width: 100%; // make the image take the full width of its container
-object-fit: cover;
-object-position: center;
-`;
 const SectionThree = () => {
   return (
     <Container>
       <Description>
-        <Text>A Good Day begins With A Feet From ObaSoles</Text>
+        <Text>A Productive Day Begins With A Sole From Us</Text>
       </Description>
-      <DesignBox><DesignImg src={ObaImg} /></DesignBox>
-      
+      <DesignBox />
     </Container>
   );
 };

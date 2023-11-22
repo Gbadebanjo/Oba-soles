@@ -5,7 +5,7 @@ import Shoe3 from "../../Image/Sole3.jpg";
 import Shoe4 from "../../Image/Sole4.jpg";
 
 const Container = styled.div`
-  height: 50%;
+  height: 65%;
   width: 100%;
   // background-color: red;
 `;
@@ -28,7 +28,7 @@ const ImgBox = styled.div`
   height: 350px;
   width: 300px;
   display: flex;
-  margin: 1%;
+  margin: 0% 1%;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
@@ -48,6 +48,24 @@ const Img = styled.img`
   }
 `;
 
+const Button = styled.button`
+  color: white;
+  background-color: black;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1% 2%;
+  margin-top: 1%;
+  border-radius: 5px;
+  transition: all 350ms;
+  &:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+`;
+
 const SectionFour = () => {
   return (
     <Container>
@@ -55,15 +73,19 @@ const SectionFour = () => {
       <Wrapper>
         <ImgBox>
           <Img src={Shoe1} />
+          <Button>Shop Now</Button>
         </ImgBox>
         <ImgBox>
           <Img src={Shoe2} />
+          <Button>Shop Now</Button>
         </ImgBox>
         <ImgBox>
           <Img src={Shoe3} />
+          <Button>Shop Now</Button>
         </ImgBox>
         <ImgBox>
           <Img src={Shoe4} />
+          <Button>Shop Now</Button>
         </ImgBox>
       </Wrapper>
     </Container>

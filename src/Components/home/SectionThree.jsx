@@ -2,18 +2,23 @@ import styled from "styled-components";
 import ObaImg from "../../Image/ObaDesign2.jpg";
 
 const Container = styled.div`
-  height: 50vh;
+  height: auto;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column-reverse;
+
+  align-items: center;
+
 `;
 const Description = styled.div`
-  width: 50%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
-  float: left;
+  // float: left;
   box-sizing: border-box;
 `;
 
@@ -25,17 +30,18 @@ const Text = styled.h1`
 `;
 
 const DesignBox = styled.div`
-  height: 50vh;
-  width: 50%;
+  height: auto;
+  width: 100%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // flex-wrap: wrap;
   background-image: url(${ObaImg});
   background-size: cover;
   background-repeat: no-repeat;
-  flex-direction: column;
+  background-position: center;
+  // flex-direction: column;
   background-attachment: fixed;
 `;
 

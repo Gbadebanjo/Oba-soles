@@ -2,48 +2,67 @@ import styled from "styled-components";
 import ObaImg from "../../Image/ObaDesign2.jpg";
 
 const Container = styled.div`
-  height: auto;
+  height: 90%;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  flex-direction: column-reverse;
+  justify-content: center;
+  flex-direction: column;
 
-  align-items: center;
-
+  @media screen and (max-width: 768px) {
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 const Description = styled.div`
-  width: 100%;
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  // float: left;
-  box-sizing: border-box;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
 `;
 
 const Text = styled.h1`
   color: red;
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 1000;
   text-align: center;
+  justify-content: center;
+  @media screen and (max-width: 768px) {
+    font-size: 2.4rem;
+    padding: 0 0 50px 0;
+  }
 `;
 
 const DesignBox = styled.div`
   height: auto;
-  width: 100%;
-
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // flex-wrap: wrap;
-  background-image: url(${ObaImg});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  // flex-direction: column;
-  background-attachment: fixed;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
+
+const Img = styled.img`
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+`;
+
 
 const SectionThree = () => {
   return (
@@ -51,7 +70,9 @@ const SectionThree = () => {
       <Description>
         <Text>A Productive Day Begins With A Sole From Us</Text>
       </Description>
-      <DesignBox />
+      <DesignBox>
+        <Img src={ObaImg} />
+      </DesignBox>
     </Container>
   );
 };

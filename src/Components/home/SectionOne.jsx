@@ -4,21 +4,28 @@ import Shoe1 from "../../Image/Brouge.jpg";
 
 const Container = styled.div`
   width: 100%;
-  height: 550px;
+  height: 500px;
   background-image: url(${Shoe1});
   background-size: cover;
-  background-position: center;
+  background-position: 25% ;
   background-attachment: fixed;
-  padding: 0;
 `;
 
 const Discount = styled.h1`
   color: red;
-  font-size: 20px;
-  padding-top: 150px;
-  padding-left: 90px;
-    line-height: 1.1;
-    letter-spacing: 0.9px;
+  font-size: 25px;
+  padding-top: 120px;
+  padding-left: 70px;
+  line-height: 1.1;
+  letter-spacing: 0.9px;
+
+    @media screen and (max-width: 768px) {
+    font-weight: 600;
+    padding-left: 20px;
+    padding-top: 150px;
+    line-height: none;
+
+  }
 `;
 
 const Story = styled.h1`
@@ -35,6 +42,15 @@ const Story = styled.h1`
   border-radius: 40px;
   width: 40%;
   height: 30%;
+
+  @media screen and (max-width: 768px) {
+    font-size: 30px;
+    padding-left: 20px;
+    padding-top: 30px;
+    margin-left: 15px;
+    width: 80%;
+    height: 20%;
+  }
 `;
 
 const Button = styled.button`
@@ -54,7 +70,13 @@ const Button = styled.button`
     background-color: #fff;
     color: #000;
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+    margin-left: 25px;
+  }
 `;
+
 const SectionOne = () => {
   return (
     <Container>

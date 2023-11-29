@@ -12,6 +12,11 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+  }
 `;
 
 const BoxImg = styled.div`
@@ -47,6 +52,7 @@ const BoxLink = styled.a`
     color: #fff;
   }
 `;
+
 const Box = styled.div`
   height: 250px;
   width: 25%;
@@ -60,6 +66,11 @@ const Box = styled.div`
   transition: all 1.2s ease-out;
   color: #823f27;
   background-color: #fff;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+
   &:hover {
     background-position: left bottom;
     transform: scale(1.2);
@@ -78,17 +89,13 @@ const Box = styled.div`
   }
 `;
 
-
-
 const SectionTwo = () => {
   return (
     <Container>
       <Box>
-        {/* <BoxImg>%</BoxImg> */}
         <BoxImg>
           <img src={Percentage} alt="percentage" />
         </BoxImg>
-
         <BoxText>Get Up To 5% Discount</BoxText>
         <BoxLink href="/product">Shop Now</BoxLink>
       </Box>

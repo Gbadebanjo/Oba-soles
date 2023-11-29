@@ -7,7 +7,7 @@ import Shoe4 from "../../Image/Sole4.jpg";
 const Container = styled.div`
   height: 65%;
   width: 100%;
-  // background-color: red;
+  background-color: red;
 `;
 
 const Description = styled.h1`

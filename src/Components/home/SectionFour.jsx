@@ -5,12 +5,12 @@ import Shoe3 from "../../Image/Sole3.jpg";
 import Shoe4 from "../../Image/Sole4.jpg";
 
 const Container = styled.div`
-  height: 65%;
+  height: auto;
   width: 100%;
   background-color: red;
 `;
 
-const Description = styled.h1`
+export const Description = styled.h1`
   display: center;
   text-align: center;
   font-size: 3rem;
@@ -21,49 +21,58 @@ const Description = styled.h1`
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-`;
-
-const ImgBox = styled.div`
+  justify-content: space-evenly;
+  `;
+  
+  const ImgBox = styled.div`
   height: 350px;
+  // background-color: white;
   width: 300px;
-  display: flex;
   margin: 0% 1%;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   align-items: center;
   -webkit-box-shadow: 0px -1px 15px -5px #dad0d0;
   box-shadow: 0px -1px 15px -5px #a8a4a4;
+  margin-bottom: 4%;
 `;
 
 const Img = styled.img`
   height: 100%;
   width: 100%;
   object-fit: cover;
+  transition: all 350ms;
+  border-radius:7px;
+
 
   &:hover {
-    opacity: 1;
+    opacity: 0.7;
     cursor: pointer;
   }
 `;
 
-const Button = styled.button`
-  color: white;
-  background-color: black;
+const Button = styled.a`
+  color: black;
+  // background-color: black;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 700;
   padding: 1% 2%;
-  margin-top: 1%;
-  border-radius: 5px;
-  transition: all 350ms;
-  &:hover {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-    cursor: pointer;
-  }
+  // margin-top: 1%;
+  // border-radius: 5px;
+  // transition: all 350ms;
+  // &:hover {
+  //   background-color: white;
+  //   color: black;
+  //   border: 1px solid black;
+  //   cursor: pointer;
+  // }
+`;
+
+const Price = styled.p`
+color: black;
+
 `;
 
 const SectionFour = () => {
@@ -77,7 +86,7 @@ const SectionFour = () => {
         </ImgBox>
         <ImgBox>
           <Img src={Shoe2} />
-          <Button>Shop Now</Button>
+          <Button >Shop Now</Button>
         </ImgBox>
         <ImgBox>
           <Img src={Shoe3} />

@@ -1,10 +1,15 @@
 import React from "react";
+import styled from "styled-components";
 
+const Container = styled.div`
+background-color: red;
+height: 100vh;
+`;
 const Product = () => {
   return (
-    <>
-    <h1>Product</h1>
-    </>
+    
+    <Container>Product</Container>
+
   );
 };
 

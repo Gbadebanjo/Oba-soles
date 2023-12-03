@@ -17,7 +17,7 @@ const NavContainer = styled.div`
   transition: opacity 0.3s ease; // animate the opacity change
 
   &:hover {
-    opacity: 1; // make the navbar fully visible when the mouse hovers over it
+    opacity: 0.5; // make the navbar fully visible when the mouse hovers over it
   }
 `;
 

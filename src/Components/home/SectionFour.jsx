@@ -5,9 +5,13 @@ import Shoe3 from "../../Image/Sole3.jpg";
 import Shoe4 from "../../Image/Sole4.jpg";
 
 const Container = styled.div`
-  height: auto;
+  height: 76%;
   width: 100%;
-  // background-color: red;
+  background-color: #f5f5f5;
+
+  @media only screen and (max-width: 768px) {
+    height: auto;
+  }
 `;
 
 export const Description = styled.h1`
@@ -16,15 +20,25 @@ export const Description = styled.h1`
   font-size: 3rem;
   font-weight: 700;
   color: black;
+  padding-top: 0.5%;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 3rem;
+    padding: 0;
+    margin: 5px;
+  }
+
 `;
 
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  `;
-  
-  const ImgBox = styled.div`
+  // background-color: #f5f6;
+  height: 76%;
+`;
+
+const ImgBox = styled.div`
   height: 350px;
   width: 300px;
   margin: 0% 1%;
@@ -33,6 +47,15 @@ const Wrapper = styled.div`
   -webkit-box-shadow: 0px -1px 15px -5px #dad0d0;
   box-shadow: 0px -1px 15px -5px #a8a4a4;
   margin-bottom: 4%;
+
+  @media only screen and (max-width: 768px) {
+    height: 350px;
+    width: 330px;
+    padding-bottom: 25%;
+    -webkit-box-shadow: none;
+
+    
+  }
 `;
 
 const Img = styled.img`
@@ -40,7 +63,7 @@ const Img = styled.img`
   width: 100%;
   object-fit: cover;
   transition: all 350ms;
-  border-radius:7px;
+  border-radius: 7px;
   &:hover {
     opacity: 0.7;
     cursor: pointer;
@@ -48,27 +71,27 @@ const Img = styled.img`
 `;
 
 const ShoeName = styled.p`
-color: black;
-font-size: 1.2rem;
-font-weight: 700;
-display: flex;
-justify-content: center;
-text-align: center;
-align-items: center;
-margin: 0;
-padding: 0;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 `;
 
 const Price = styled.p`
-color: black;
-font-size: 1.2rem;
-font-weight: 700;
-display: flex;
-justify-content: center;
-text-align: center;
-align-items: center;
-margin: 0;
-padding: 0;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 `;
 
 const Button = styled.a`
@@ -79,13 +102,11 @@ const Button = styled.a`
   align-items: center;
   font-size: 1.2rem;
   font-weight: 700;
-    &:hover {
+  &:hover {
     color: red;
     cursor: pointer;
   }
 `;
-
-
 
 const SectionFour = () => {
   return (

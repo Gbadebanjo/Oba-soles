@@ -7,7 +7,7 @@ import Shoe4 from "../../Image/Sole4.jpg";
 const Container = styled.div`
   height: auto;
   width: 100%;
-  background-color: red;
+  // background-color: red;
 `;
 
 export const Description = styled.h1`
@@ -26,11 +26,8 @@ const Wrapper = styled.div`
   
   const ImgBox = styled.div`
   height: 350px;
-  // background-color: white;
   width: 300px;
   margin: 0% 1%;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
   align-items: center;
   -webkit-box-shadow: 0px -1px 15px -5px #dad0d0;
@@ -44,36 +41,51 @@ const Img = styled.img`
   object-fit: cover;
   transition: all 350ms;
   border-radius:7px;
-
-
   &:hover {
     opacity: 0.7;
     cursor: pointer;
   }
 `;
 
-const Button = styled.a`
-  color: black;
-  // background-color: black;
-  border: none;
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 1% 2%;
-  // margin-top: 1%;
-  // border-radius: 5px;
-  // transition: all 350ms;
-  // &:hover {
-  //   background-color: white;
-  //   color: black;
-  //   border: 1px solid black;
-  //   cursor: pointer;
-  // }
+const ShoeName = styled.p`
+color: black;
+font-size: 1.2rem;
+font-weight: 700;
+display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
+margin: 0;
+padding: 0;
 `;
 
 const Price = styled.p`
 color: black;
-
+font-size: 1.2rem;
+font-weight: 700;
+display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
+margin: 0;
+padding: 0;
 `;
+
+const Button = styled.a`
+  color: black;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+    &:hover {
+    color: red;
+    cursor: pointer;
+  }
+`;
+
+
 
 const SectionFour = () => {
   return (
@@ -82,19 +94,27 @@ const SectionFour = () => {
       <Wrapper>
         <ImgBox>
           <Img src={Shoe1} />
-          <Button>Shop Now</Button>
+          <ShoeName>Men Black Half Shoe </ShoeName>
+          <Price>$900</Price>
+          <Button href="">Shop Now</Button>
         </ImgBox>
         <ImgBox>
           <Img src={Shoe2} />
-          <Button >Shop Now</Button>
+          <ShoeName>Men Grey Half Shoe </ShoeName>
+          <Price>$1000</Price>
+          <Button href="">Shop Now</Button>
         </ImgBox>
         <ImgBox>
           <Img src={Shoe3} />
-          <Button>Shop Now</Button>
+          <ShoeName>Men Brown Half Shoe </ShoeName>
+          <Price>$1,000</Price>
+          <Button href="">Shop Now</Button>
         </ImgBox>
         <ImgBox>
           <Img src={Shoe4} />
-          <Button>Shop Now</Button>
+          <ShoeName>Unisex Brown Sandal </ShoeName>
+          <Price>$600</Price>
+          <Button href="">Shop Now</Button>
         </ImgBox>
       </Wrapper>
     </Container>

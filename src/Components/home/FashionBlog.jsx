@@ -1,11 +1,31 @@
 import styled from "styled-components";
-import { Description } from "./SectionFour";
+// import { Description } from "./SectionFour";
 
 const Container = styled.div`
   height: 70%;
   weight: 100%;
   background-color: #e3f7ff;
+  padding: 0px;
+  margin: 0px;
   `;
+
+  export const Description = styled.h1`
+  display: center;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: black;
+  // padding-top: 0.5%;
+  // padding: 0;
+  margin-bottom: 5px;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 3rem;
+    padding: 0;
+    margin: 5px;
+  }
+  `;
+
 
 const Wrapper = styled.div`
   height: 70%;
@@ -13,6 +33,8 @@ const Wrapper = styled.div`
   justify-content: space-around;
   align-items: center;
   background-color: #004159;
+  padding: 10px;
+  // margin: 10px;
 `;
 
 const CardContainer = styled.div`

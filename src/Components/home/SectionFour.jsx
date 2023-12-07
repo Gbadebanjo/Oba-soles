@@ -5,7 +5,7 @@ import Shoe3 from "../../Image/Sole3.jpg";
 import Shoe4 from "../../Image/Sole4.jpg";
 
 const Container = styled.div`
-  height: 76%;
+  height: auto;
   width: 100%;
   background-color: #f5f5f5;
 
@@ -46,15 +46,15 @@ const ImgBox = styled.div`
   align-items: center;
   -webkit-box-shadow: 0px -1px 15px -5px #dad0d0;
   box-shadow: 0px -1px 15px -5px #a8a4a4;
-  margin-bottom: 4%;
+  margin-bottom: 10%;
 
   @media only screen and (max-width: 768px) {
     height: 350px;
     width: 330px;
     padding-bottom: 25%;
     -webkit-box-shadow: none;
+    margin-bottom: 1%;
 
-    
   }
 `;
 

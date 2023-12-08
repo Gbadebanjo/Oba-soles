@@ -8,7 +8,7 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: column;
-
+  
   @media screen and (max-width: 768px) {
     height: 100%;
     width: 100%;

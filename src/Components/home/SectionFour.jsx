@@ -27,7 +27,6 @@ export const Description = styled.h1`
     padding: 0;
     margin: 5px;
   }
-
 `;
 
 const Wrapper = styled.div`
@@ -51,7 +50,7 @@ const ImgBox = styled.div`
   @media only screen and (max-width: 768px) {
     height: 350px;
     width: 330px;
-    padding-bottom: 25%;
+    padding-bottom: 20%;
     -webkit-box-shadow: none;
     margin-bottom: 1%;
 

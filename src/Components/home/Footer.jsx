@@ -2,21 +2,28 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
-  faLinkedin,
   faTwitter,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import { FaEnvelope, FaPhone } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaPhone,
+  FaHome,
+  FaProductHunt,
+  FaInfoCircle,
+  FaBlog,
+  FaAddressCard,
+} from "react-icons/fa";
 
 const Container = styled.div`
-  height: 350px;
+  height: 300px;
   weight: 100%;
   background-color: #1b1b1b;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border-top: 6px solid red;
-  padding: 20px;
+  padding: 40px;
 `;
 
 const BrandName = styled.h1`
@@ -36,6 +43,7 @@ color: #e4e4e4;
 // background-color: #ff00ff;
 padding: 0px;
 margin: 0px;
+flex: 1;
 `;
 
 const Context = styled.p`
@@ -50,7 +58,7 @@ const Context = styled.p`
 const SocialMedia = styled.div`
   display: flex;
   align-items: center;
-  padding-top: 50px;
+  padding-top: 30px;
   margin: 0px;
 `;
 
@@ -79,8 +87,7 @@ const InfoDetails = styled.div`
 const Contact = styled.div`
   display: flex;
   align-items: center;
-  padding: 50px 20px 0px 5px;
-  // padding-right: 20px;
+  padding: 30px 20px 0px 5px;
   color: #efefef;
 `;
 
@@ -88,13 +95,58 @@ const NavDetails = styled.div`
   height: auto;
   weight: 33%;
   color: #e4e4e4;
-  background-color: blue;
+  flex: 1;
+  padding-left: 120px;
+`;
+
+const Nav = styled.div`
+  height: auto;
+  weight: 33%;
+  color: #ee0000;
+  font-size: 1.7rem;
+  font-weight: bold;
+`;
+
+const NavItems = styled.a`
+  text-decoration: none;
+  color: #efefef;
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  text-decoration: none;
+  flex-direction: column;
+  &:hover {
+    color: #ee0000;
+    cursor: pointer;
+  }
+`;
+
+const NavLinks = styled.a`
+  display: flex;
+  // flex-direction: column;
+  list-style: none;
+  color: #efefef;
+  padding: 10px 0px 15px 0px;
+  text-decoration: none;
+  &:hover {
+    color: #ee0000;
+    cursor: pointer;
+  }
 `;
 
 const NewsLetter = styled.div`
   height: auto;
   weight: 33%;
   color: #e4e4e4;
+  flex: 1;
+`;
+
+const Heading = styled.h1`
+  // font-size: 1.7rem;
+  font-weight: bold;
+  color: #ee0000;
+  padding: 0px;
+  margin: 0px;
 `;
 
 const Footer = () => {
@@ -104,7 +156,7 @@ const Footer = () => {
         <BrandName>ObaSoles</BrandName>
         <Context>
           We are a reliable shoe company, we build, produce and sell all types
-          of footwears. Incase of special request kindly react out to us.
+          of footwears. Incase of special request kindly reach out to us.
         </Context>
         <SocialMedia>
           <Links
@@ -145,18 +197,48 @@ const Footer = () => {
         </InfoDetails>
       </Info>
       <NavDetails>
-        <BrandName>ObaSoles</BrandName>
-        <Context>
-          We are a reliable shoe company, we build, produce and sell all types
-          of footwears. Incase of special request kindly react out to us.
-        </Context>
+        <Nav>Navigation</Nav>
+        <NavItems>
+          <NavLinks href="/home">
+            <FaHome style={{ marginRight: "30px" }} size={23} color="#ee0000" />{" "}
+            Home
+          </NavLinks>
+          <NavLinks href="/product">
+            <FaProductHunt
+              style={{ marginRight: "30px" }}
+              size={23}
+              color="#ee0000"
+            />{" "}
+            Product
+          </NavLinks>
+          <NavLinks href="/about">
+            <FaInfoCircle
+              style={{ marginRight: "30px" }}
+              size={23}
+              color="#ee0000"
+            />{" "}
+            About
+          </NavLinks>
+          <NavLinks href="/blog">
+            <FaBlog style={{ marginRight: "30px" }} size={23} color="#ee0000" />{" "}
+            Blog
+          </NavLinks>
+          <NavLinks href="/blog">
+            <FaAddressCard
+              style={{ marginRight: "30px" }}
+              size={23}
+              color="#ee0000"
+            />{" "}
+            Contact
+          </NavLinks>
+        </NavItems>
       </NavDetails>
       <NewsLetter>
-        <BrandName>ObaSoles</BrandName>
-        <Context>
-          We are a reliable shoe company, we build, produce and sell all types
-          of footwears. Incase of special request kindly react out to us.
-        </Context>
+        <Heading>SignUp to catch a vibe</Heading>
+        <form>
+          <input type="email" placeholder="Your email address" required />
+          <button type="submit">Subscribe</button>
+        </form>
       </NewsLetter>
     </Container>
   );

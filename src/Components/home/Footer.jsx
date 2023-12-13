@@ -24,6 +24,12 @@ const Container = styled.div`
   justify-content: space-between;
   border-top: 6px solid red;
   padding: 40px;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    padding: 30px;
+  }
 `;
 
 const BrandName = styled.h1`
@@ -97,6 +103,10 @@ const NavDetails = styled.div`
   color: #e4e4e4;
   flex: 1;
   padding-left: 120px;
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Nav = styled.div`
@@ -105,6 +115,10 @@ const Nav = styled.div`
   color: #ee0000;
   font-size: 1.7rem;
   font-weight: bold;
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const NavItems = styled.a`
@@ -139,6 +153,11 @@ const NewsLetter = styled.div`
   weight: 33%;
   color: #e4e4e4;
   flex: 1;
+`;
+
+const NewsLetterForm = styled.form`
+  display: flex;
+  flex-direction: column;
 `;
 
 const Heading = styled.h1`
@@ -200,14 +219,14 @@ const Footer = () => {
         <Nav>Navigation</Nav>
         <NavItems>
           <NavLinks href="/home">
-            <FaHome style={{ marginRight: "30px" }} size={23} color="#ee0000" />{" "}
+            <FaHome style={{ marginRight: "30px" }} size={23} color="#ff4040" />{" "}
             Home
           </NavLinks>
           <NavLinks href="/product">
             <FaProductHunt
               style={{ marginRight: "30px" }}
               size={23}
-              color="#ee0000"
+              color="#ff4040"
             />{" "}
             Product
           </NavLinks>
@@ -215,19 +234,19 @@ const Footer = () => {
             <FaInfoCircle
               style={{ marginRight: "30px" }}
               size={23}
-              color="#ee0000"
+              color="#ff4040"
             />{" "}
             About
           </NavLinks>
           <NavLinks href="/blog">
-            <FaBlog style={{ marginRight: "30px" }} size={23} color="#ee0000" />{" "}
+            <FaBlog style={{ marginRight: "30px" }} size={23} color="#ff4040" />{" "}
             Blog
           </NavLinks>
           <NavLinks href="/blog">
             <FaAddressCard
               style={{ marginRight: "30px" }}
               size={23}
-              color="#ee0000"
+              color="#ff4040"
             />{" "}
             Contact
           </NavLinks>
@@ -235,10 +254,10 @@ const Footer = () => {
       </NavDetails>
       <NewsLetter>
         <Heading>SignUp to catch a vibe</Heading>
-        <form>
+        <NewsLetterForm>
           <input type="email" placeholder="Your email address" required />
           <button type="submit">Subscribe</button>
-        </form>
+        </NewsLetterForm>
       </NewsLetter>
     </Container>
   );

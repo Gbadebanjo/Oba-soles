@@ -16,7 +16,17 @@ const Title = styled.h1`
   text-align: center;
 `;
 
+const NameInput = styled.input`
+  display: flex;
+
+  margin-bottom: 10px;
+  padding: 8px 150px 8px 5px;
+  border-radius: 10px;
+`;
+
 const EmailInput = styled.input`
+  display: flex;
+
   margin-bottom: 10px;
   padding: 8px 150px 8px 5px;
   border-radius: 10px;
@@ -32,27 +42,32 @@ const PasswordInput = styled.input`
 const SubmitButton = styled.button`
   color: #fff;
   display: flex;
-  padding: 9px 143px;
+  padding: 9px 136px;
   border-radius: 10px;
   background-color: #ee0000;
   font-weight: bold;
 `;
 
-const LoginPage = () => {
+const SignUp = () => {
   return (
     <LoginInput>
-      <Title>Login</Title>
+      <Title>Sign Up</Title>
       <LoginForm>
-        <EmailInput type="" placeholder="your@email.com" required></EmailInput>
+        <NameInput type="name" placeholder="firstname" required></NameInput>
+        <EmailInput
+          type="email"
+          placeholder="your@email.com"
+          required
+        ></EmailInput>
         <PasswordInput
           type="password "
           placeholder="password"
           required
         ></PasswordInput>
-        <SubmitButton>Login</SubmitButton>
+        <SubmitButton>SignUp</SubmitButton>
       </LoginForm>
     </LoginInput>
   );
 };
 
-export default LoginPage;
+export default SignUp;

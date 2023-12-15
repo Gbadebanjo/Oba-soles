@@ -29,6 +29,7 @@ const BrandName = styled.h1`
   text-shadow: 0.1rem 0.1rem 0.1rem #000;
   padding: 0 1rem;
   margin-left: 1%;
+  padding-top: 30px;
 `;
 
 const NavLinks = styled.ul`
@@ -42,6 +43,8 @@ const NavItems = styled(NavLink)`
   font-size: 1.2rem;
   font-weight: 500;
   margin-left: 1.5rem;
+  padding-top: 20px;
+
   &:hover {
     color: #ee0000;
     cursor: pointer;

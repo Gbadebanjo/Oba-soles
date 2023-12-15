@@ -1,6 +1,6 @@
 import Navbar from "../navbar/Navbar";
 import styled from "styled-components";
-// import Footer from "../footer/Footer";
+import Footer from "../footer/Footer";
 
 const Container = styled.div`
   height: 100vh;
@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
     <Container>
       <Navbar />
       {children}
-      {/* <Footer/> */}
+      <Footer/>
     </Container>
   );
 };

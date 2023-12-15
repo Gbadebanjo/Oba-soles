@@ -4,10 +4,12 @@ import ObaImg from "../../Image/ObaDesign2.jpg";
 const Container = styled.div`
   height: 90%;
   width: 100%;
+  
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: column;
+  background-color: #f8f8f8;
   
   @media screen and (max-width: 768px) {
     height: 100%;

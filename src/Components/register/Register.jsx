@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MoreInfo } from "../loginPage/LoginPage.jsx";
 
 const LoginInput = styled.div`
   display: flex;
@@ -14,6 +15,7 @@ const LoginForm = styled.form``;
 const Title = styled.h1`
   font-size: bold;
   text-align: center;
+  // color: #ee0000;
 `;
 
 const NameInput = styled.input`
@@ -42,16 +44,17 @@ const PasswordInput = styled.input`
 const SubmitButton = styled.button`
   color: #fff;
   display: flex;
-  padding: 9px 136px;
+  padding: 9px 131px;
   border-radius: 10px;
   background-color: #ee0000;
   font-weight: bold;
+  font-size: 16px;
 `;
 
-const SignUp = () => {
+const Register = () => {
   return (
     <LoginInput>
-      <Title>Sign Up</Title>
+      <Title>Register</Title>
       <LoginForm>
         <NameInput type="name" placeholder="firstname" required></NameInput>
         <EmailInput
@@ -64,10 +67,11 @@ const SignUp = () => {
           placeholder="password"
           required
         ></PasswordInput>
-        <SubmitButton>SignUp</SubmitButton>
+        <SubmitButton>Register</SubmitButton>
       </LoginForm>
+      <MoreInfo>Already Registered? <a href="/login">Login In</a></MoreInfo>
     </LoginInput>
   );
 };
 
-export default SignUp;
+export default Register;

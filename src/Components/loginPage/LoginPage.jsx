@@ -38,6 +38,18 @@ const SubmitButton = styled.button`
   font-weight: bold;
 `;
 
+export const MoreInfo = styled.p`
+  font-size: 16px;
+  text-align: center;
+  margin-top: 10px;
+  `;
+
+  const Or = styled.picture`
+  // font-size: bold;
+  padding: 0px;
+  margin: 0px;
+`;
+
 const LoginPage = () => {
   return (
     <LoginInput>
@@ -51,6 +63,11 @@ const LoginPage = () => {
         ></PasswordInput>
         <SubmitButton>Login</SubmitButton>
       </LoginForm>
+        <MoreInfo>
+          Don't have an account? <a href="/register">Register</a>
+        </MoreInfo>
+        {/* <Or>Or</Or> */}
+        {/* <SubmitButton>Continue with Google</SubmitButton> */}
     </LoginInput>
   );
 };

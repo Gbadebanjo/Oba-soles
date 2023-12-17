@@ -4,12 +4,11 @@ import ObaImg from "../../Image/ObaDesign2.jpg";
 const Container = styled.div`
   height: 90%;
   width: 100%;
-  
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: column;
-  background-color: #f8f8f8;
+  // background-color: #f5f5f5;
   
   @media screen and (max-width: 768px) {
     height: 100%;
@@ -27,7 +26,6 @@ const Description = styled.div`
   @media screen and (max-width: 768px) {
     width: 100%;
   }
-
 `;
 
 const Text = styled.h1`
@@ -38,7 +36,8 @@ const Text = styled.h1`
   justify-content: center;
   @media screen and (max-width: 768px) {
     font-size: 2.4rem;
-    padding: 0 0 50px 0;
+    padding: 10px 0px 50px 0px;
+    display-content: center;
   }
 `;
 

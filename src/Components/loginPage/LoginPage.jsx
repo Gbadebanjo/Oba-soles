@@ -14,6 +14,8 @@ const LoginForm = styled.form``;
 const Title = styled.h1`
   font-size: bold;
   text-align: center;
+  color: #ee0000;
+  margin-bottom: 15px;
 `;
 
 const EmailInput = styled.input`
@@ -32,10 +34,11 @@ const PasswordInput = styled.input`
 const SubmitButton = styled.button`
   color: #fff;
   display: flex;
-  padding: 9px 143px;
+  padding: 9px 137px;
   border-radius: 10px;
   background-color: #ee0000;
   font-weight: bold;
+  font-size: 16px;
 `;
 
 export const MoreInfo = styled.p`
@@ -44,11 +47,11 @@ export const MoreInfo = styled.p`
   margin-top: 10px;
   `;
 
-  const Or = styled.picture`
-  // font-size: bold;
-  padding: 0px;
-  margin: 0px;
-`;
+//   const Or = styled.picture`
+//   // font-size: bold;
+//   padding: 0px;
+//   margin: 0px;
+// `;
 
 const LoginPage = () => {
   return (

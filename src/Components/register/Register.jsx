@@ -10,17 +10,20 @@ const LoginInput = styled.div`
   height: 100vh;
 `;
 
-const LoginForm = styled.form``;
+const LoginForm = styled.form`
+padding-top: 0px;
+margin-top: 0px;`;
 
 const Title = styled.h1`
-  font-size: bold;
+  // font-size: bold;
   text-align: center;
-  // color: #ee0000;
+  color: #ee0000;
+  margin-bottom: 15px;
 `;
 
 const NameInput = styled.input`
   display: flex;
-
+  margin-top: 0px;
   margin-bottom: 10px;
   padding: 8px 150px 8px 5px;
   border-radius: 10px;
@@ -44,7 +47,7 @@ const PasswordInput = styled.input`
 const SubmitButton = styled.button`
   color: #fff;
   display: flex;
-  padding: 9px 131px;
+  padding: 9px 127px;
   border-radius: 10px;
   background-color: #ee0000;
   font-weight: bold;
@@ -69,7 +72,7 @@ const Register = () => {
         ></PasswordInput>
         <SubmitButton>Register</SubmitButton>
       </LoginForm>
-      <MoreInfo>Already Registered? <a href="/login">Login In</a></MoreInfo>
+      <MoreInfo>Already Registered? <a href="/login">Login</a></MoreInfo>
     </LoginInput>
   );
 };

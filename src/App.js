@@ -5,6 +5,9 @@ import Product from './Components/product/Product.jsx';
 import Layout from './Components/layout/Layout';
 import LoginPage from './Components/loginPage/LoginPage.jsx';
 import Register from './Components/register/Register.jsx';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://localhost:4000';
 function App() {
   return (
     <Layout>

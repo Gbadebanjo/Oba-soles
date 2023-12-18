@@ -125,7 +125,7 @@ const Nav = styled.div`
   }
 `;
 
-const NavItems = styled.a`
+const NavItems = styled.div`
   text-decoration: none;
   color: #efefef;
   font-size: 1rem;
@@ -141,7 +141,6 @@ const NavItems = styled.a`
 
 const NavLinks = styled.a`
   display: flex;
-  // flex-direction: column;
   list-style: none;
   color: #efefef;
   padding: 10px 0px 15px 0px;
@@ -237,7 +236,7 @@ const Footer = () => {
       <NavDetails>
         <Nav>Navigation</Nav>
         <NavItems>
-          <NavLinks href="/home">
+          <NavLinks href="/">
             <FaHome style={{ marginRight: "30px" }} size={23} color="#ff4040" />{" "}
             Home
           </NavLinks>

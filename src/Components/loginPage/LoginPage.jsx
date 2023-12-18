@@ -20,21 +20,21 @@ const Title = styled.h1`
 
 const EmailInput = styled.input`
   margin-bottom: 10px;
-  padding: 8px 150px 8px 5px;
+  padding: 8px 160px 8px 5px;
   border-radius: 10px;
 `;
 
 const PasswordInput = styled.input`
   display: flex;
   margin-bottom: 10px;
-  padding: 8px 150px 8px 5px;
+  padding: 8px 160px 8px 5px;
   border-radius: 10px;
 `;
 
 const SubmitButton = styled.button`
   color: #fff;
   display: flex;
-  padding: 9px 137px;
+  padding: 9px 142px;
   border-radius: 10px;
   background-color: #ee0000;
   font-weight: bold;

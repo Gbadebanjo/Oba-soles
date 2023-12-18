@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { MoreInfo } from "../loginPage/LoginPage.jsx";
+import { useState } from "react";
+import axios from "axios";
 
 const LoginInput = styled.div`
   display: flex;
@@ -11,8 +13,9 @@ const LoginInput = styled.div`
 `;
 
 const LoginForm = styled.form`
-padding-top: 0px;
-margin-top: 0px;`;
+  padding-top: 0px;
+  margin-top: 0px;
+`;
 
 const Title = styled.h1`
   // font-size: bold;
@@ -25,7 +28,7 @@ const NameInput = styled.input`
   display: flex;
   margin-top: 0px;
   margin-bottom: 10px;
-  padding: 8px 150px 8px 5px;
+  padding: 8px 160px 8px 5px;
   border-radius: 10px;
 `;
 
@@ -33,21 +36,21 @@ const EmailInput = styled.input`
   display: flex;
 
   margin-bottom: 10px;
-  padding: 8px 150px 8px 5px;
+  padding: 8px 160px 8px 5px;
   border-radius: 10px;
 `;
 
 const PasswordInput = styled.input`
   display: flex;
   margin-bottom: 10px;
-  padding: 8px 150px 8px 5px;
+  padding: 8px 160px 8px 5px;
   border-radius: 10px;
 `;
 
 const SubmitButton = styled.button`
   color: #fff;
   display: flex;
-  padding: 9px 127px;
+  padding: 9px 132px;
   border-radius: 10px;
   background-color: #ee0000;
   font-weight: bold;
@@ -55,24 +58,48 @@ const SubmitButton = styled.button`
 `;
 
 const Register = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassWord] = useState("");
+
+  function registerUser(ev) {
+    ev.preventDefault();
+    axios.get("/test", {
+      name: name,
+      email: email,
+      password: password,
+    });
+  }
   return (
     <LoginInput>
       <Title>Register</Title>
-      <LoginForm>
-        <NameInput type="name" placeholder="firstname" required></NameInput>
+      <LoginForm onSubmit={registerUser}>
+        <NameInput
+          type="name"
+          placeholder="John Doe"
+          required
+          value={name}
+          onChange={(ev) => setName(ev.target.value)}
+        ></NameInput>
         <EmailInput
           type="email"
           placeholder="your@email.com"
           required
+          value={email}
+          onChange={(ev) => setEmail(ev.target.value)}
         ></EmailInput>
         <PasswordInput
           type="password "
           placeholder="password"
           required
+          value={password}
+          onChange={(ev) => setPassWord(ev.target.value)}
         ></PasswordInput>
         <SubmitButton>Register</SubmitButton>
       </LoginForm>
-      <MoreInfo>Already Registered? <a href="/login">Login</a></MoreInfo>
+      <MoreInfo>
+        Already Registered? <a href="/login">Login</a>
+      </MoreInfo>
     </LoginInput>
   );
 };

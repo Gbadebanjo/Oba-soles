@@ -64,10 +64,10 @@ const Register = () => {
 
   function registerUser(ev) {
     ev.preventDefault();
-    axios.get("/test", {
-      name: name,
-      email: email,
-      password: password,
+    axios.post("/register", {
+      name,
+      email,
+      password,
     });
   }
   return (

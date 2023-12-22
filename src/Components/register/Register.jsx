@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { MoreInfo } from "../loginPage/LoginPage.jsx";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const LoginInput = styled.div`
   display: flex;
@@ -62,13 +63,34 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassWord] = useState("");
 
+  const navigate = useNavigate();
+
   function registerUser(ev) {
     ev.preventDefault();
-    axios.post("/register", {
-      name,
-      email,
-      password,
-    });
+    axios
+      .post("/register", {
+        name,
+        email,
+        password,
+      })
+      .then((response) => {
+        // console.log(response.data);
+        alert("Registration Successful!");
+        navigate("/login");
+      })
+      .catch((error) => {
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          // that falls out of the range of 2xx
+          alert(`Registration Failed! ${error.response.data.message}`);
+        } else if (error.request) {
+          // The request was made but no response was received
+          alert("Registration Failed! No response from server.");
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          alert("Registration Failed! Error in setting up the request.");
+        }
+      });
   }
   return (
     <LoginInput>

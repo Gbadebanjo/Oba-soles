@@ -118,7 +118,6 @@ const Navbar = () => {
               </svg>
             </UserImg>
           </Link>
-
           <FontAwesomeIcon icon={faShoppingCart} style={{ fontSize: "19px" }} />
           <CartCount>{cartCount}</CartCount>
         </CartContainer>

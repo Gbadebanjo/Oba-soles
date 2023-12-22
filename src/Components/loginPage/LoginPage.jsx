@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 
 const LoginInput = styled.div`
   display: flex;
@@ -45,32 +48,58 @@ export const MoreInfo = styled.p`
   font-size: 16px;
   text-align: center;
   margin-top: 10px;
-  `;
-
-//   const Or = styled.picture`
-//   // font-size: bold;
-//   padding: 0px;
-//   margin: 0px;
-// `;
+`;
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    axios
+      .post("/login", {
+        email,
+        password,
+      })
+      .then((res) => {
+        console.log(res);
+        if (res.status === 200) {
+          alert("Login successful");
+          navigate("/");
+        } else {
+          alert("Incorrect email or password");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   return (
     <LoginInput>
       <Title>Login</Title>
-      <LoginForm>
-        <EmailInput type="" placeholder="your@email.com" required></EmailInput>
+      <LoginForm onSubmit={handleSubmit}>
+        <EmailInput
+          type="email"
+          placeholder="your@email.com"
+          required
+          value={email}
+          onChange={(ev) => setEmail(ev.target.value)}
+        ></EmailInput>
         <PasswordInput
           type="password "
           placeholder="password"
           required
+          value={password}
+          onChange={(ev) => setPassword(ev.target.value)}
         ></PasswordInput>
-        <SubmitButton>Login</SubmitButton>
+        <SubmitButton type="submit">Login</SubmitButton>
       </LoginForm>
-        <MoreInfo>
-          Don't have an account? <a href="/register">Register</a>
-        </MoreInfo>
-        {/* <Or>Or</Or> */}
-        {/* <SubmitButton>Continue with Google</SubmitButton> */}
+      <MoreInfo>
+        Don't have an account? <a href="/register">Register</a>
+      </MoreInfo>
+      {/* <Or>Or</Or> */}
+      {/* <SubmitButton>Continue with Google</SubmitButton> */}
     </LoginInput>
   );
 };

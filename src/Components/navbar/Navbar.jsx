@@ -3,6 +3,8 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, Link } from "react-router-dom";
+import  UserContext  from "../Context/UserContext";
+import React from "react";
 
 const NavContainer = styled.div`
   display: flex;
@@ -59,7 +61,11 @@ const CartContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding-top: 10px;
+  // padding: 1rem 2rem;
+  // margin-top: 15px;
+
+  
   color: #efefef;
   &:hover {
     color: ee0000#;
@@ -70,14 +76,19 @@ const CartContainer = styled.div`
 const CartCount = styled.span`
   margin-left: 10px;
   color: #fff;
+  margin-right: 40px;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+
 `;
 
 const UserImg = styled.div`
   display: flex;
-  padding-right: 20px;
+  padding-right:  35px;
+  // margin-top: 10px;
   svg {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     fill: #fff;
     &:hover {
       fill: #ee0000;
@@ -85,8 +96,26 @@ const UserImg = styled.div`
   }
 `;
 
+const UserName = styled.p`
+color: #fff;
+padding-left: 5px;
+padding-top: 2px;
+font-weight: 700;
+text-decoration: none;
+font-size: 1.1rem;
+`;
+
 const Navbar = () => {
   const [cartCount, setCartCount] = useState(0);
+  const { name, setName } = React.useContext(UserContext);
+  // console.log(name)
+  React.useEffect(() => {
+    const storedName = localStorage.getItem('name');
+    
+    if (storedName) {
+      setName(storedName);
+    }
+  }, []);
   return (
     <>
       <NavContainer>
@@ -116,9 +145,10 @@ const Navbar = () => {
                   clipRule="evenodd"
                 />
               </svg>
+              <UserName>{name}</UserName>
             </UserImg>
           </Link>
-          <FontAwesomeIcon icon={faShoppingCart} style={{ fontSize: "19px" }} />
+          <FontAwesomeIcon icon={faShoppingCart} style={{ fontSize: "23px", paddingBottom: "5px"  }} />
           <CartCount>{cartCount}</CartCount>
         </CartContainer>
       </NavContainer>

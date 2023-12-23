@@ -6,18 +6,24 @@ import Layout from './Components/layout/Layout';
 import LoginPage from './Components/loginPage/LoginPage.jsx';
 import Register from './Components/register/Register.jsx';
 import axios from 'axios';
+import UserContext from './Components/Context/UserContext.jsx';
+import React from 'react';
 
 axios.defaults.baseURL = 'http://localhost:4000';
 function App() {
+  const [name, setName] = React.useState(""); //State is created to manage the name of the user Context that is logged in
   return (
-    <Layout>
-      <Routes>
-        <Route index element={<Home/>} />
-        <Route path='/product' element={<Product />} />
-        <Route path='/login' element={<LoginPage />} />
-        <Route path='/register' element={<Register />} />
-      </Routes>
-    </Layout>
+    <UserContext.Provider value={{ name, setName }}> {/* Provide the context */}
+      <Layout>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path='/product' element={<Product />} />
+          <Route path='/login' element={<LoginPage />} />
+          <Route path='/register' element={<Register />} />
+        </Routes>
+      </Layout>
+    </UserContext.Provider>
+
   );
 }
 

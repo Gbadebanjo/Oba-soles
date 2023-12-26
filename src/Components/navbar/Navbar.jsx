@@ -1,10 +1,13 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, Link } from "react-router-dom";
-import  UserContext  from "../Context/UserContext";
+import UserContext from "../Context/UserContext";
 import React from "react";
+import Modal from "react-modal";
+import { MdClose, MdHome, MdEdit } from "react-icons/md";
+import { BiLogOut } from "react-icons/bi";
 
 const NavContainer = styled.div`
   display: flex;
@@ -62,10 +65,6 @@ const CartContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding-top: 10px;
-  // padding: 1rem 2rem;
-  // margin-top: 15px;
-
-  
   color: #efefef;
   &:hover {
     color: ee0000#;
@@ -79,12 +78,11 @@ const CartCount = styled.span`
   margin-right: 40px;
   margin-bottom: 10px;
   font-size: 1.3rem;
-
 `;
 
 const UserImg = styled.div`
   display: flex;
-  padding-right:  35px;
+  padding-right: 35px;
   // margin-top: 10px;
   svg {
     width: 32px;
@@ -97,25 +95,44 @@ const UserImg = styled.div`
 `;
 
 const UserName = styled.p`
-color: #fff;
-padding-left: 5px;
-padding-top: 2px;
-font-weight: 700;
-text-decoration: none;
-font-size: 1.1rem;
+  color: #fff;
+  padding-left: 5px;
+  padding-top: 2px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.1rem;
 `;
 
 const Navbar = () => {
   const [cartCount, setCartCount] = useState(0);
   const { name, setName } = React.useContext(UserContext);
-  // console.log(name)
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  function openModal() {
+    setIsModalOpen(true);
+  }
+
+  function closeModal() {
+    setIsModalOpen(false);
+  }
+
+  function handleLogout() {
+    localStorage.clear();
+    setName("");
+  }
+
+  function goHome() {
+    window.location.href = "/";
+  }
+
   React.useEffect(() => {
-    const storedName = localStorage.getItem('name');
-    
+    const storedName = localStorage.getItem("name");
+
     if (storedName) {
       setName(storedName);
     }
   }, []);
+
   return (
     <>
       <NavContainer>
@@ -132,7 +149,7 @@ const Navbar = () => {
         </NavLinks>
         <CartContainer>
           <Link to="/login">
-            <UserImg>
+            <UserImg onClick={openModal}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -148,10 +165,47 @@ const Navbar = () => {
               <UserName>{name}</UserName>
             </UserImg>
           </Link>
-          <FontAwesomeIcon icon={faShoppingCart} style={{ fontSize: "23px", paddingBottom: "5px"  }} />
+          <FontAwesomeIcon
+            icon={faShoppingCart}
+            style={{ fontSize: "23px", paddingBottom: "5px" }}
+          />
           <CartCount>{cartCount}</CartCount>
         </CartContainer>
       </NavContainer>
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        contentLabel="User Modal"
+        style={{
+          content: {
+            width: "300px",
+            height: "350px",
+            margin: "auto",
+            borderRadius: "20px",
+            border: " 3px solid #ee0000",
+          },
+          overlay: {
+            backgroundColor: "rgba(0, 0, 0, 0.75)", // This is black with 75% opacity
+          },
+        }}
+      >
+        <div style={{ position: "absolute", top: "10px", right: "10px" }}>
+          <MdClose onClick={closeModal} size={24} color="black" />
+        </div>
+        <h2>Hello, {name}</h2>
+        <div onClick={goHome}>
+          <MdHome size={24} color="black" />
+          <span>Home</span>
+        </div>
+        <div >
+          <MdEdit size={24} color="black" />
+          <span>Edit Information</span>
+        </div>
+        <div onClick={handleLogout}>
+          <BiLogOut size={24} color="black" />
+          <span>Logout</span>
+        </div>
+      </Modal>
     </>
   );
 };

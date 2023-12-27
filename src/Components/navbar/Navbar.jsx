@@ -2,12 +2,13 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, Navigate } from "react-router-dom";
 import UserContext from "../Context/UserContext";
 import React from "react";
 import Modal from "react-modal";
 import { MdClose, MdHome, MdEdit } from "react-icons/md";
 import { BiLogOut } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 
 const NavContainer = styled.div`
   display: flex;
@@ -103,22 +104,35 @@ const UserName = styled.p`
   font-size: 1.1rem;
 `;
 
+const BreakPoint = styled.hr`
+  border: 0;
+  height: 1px;
+  background: red;
+`;
+
 const Navbar = () => {
+  const navigate = useNavigate();
   const [cartCount, setCartCount] = useState(0);
   const { name, setName } = React.useContext(UserContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   function openModal() {
-    setIsModalOpen(true);
+    if (name) {
+      setIsModalOpen(true);
+    } else {
+      navigate("/login");
+    }
   }
 
   function closeModal() {
     setIsModalOpen(false);
+    navigate("/");
   }
 
   function handleLogout() {
     localStorage.clear();
     setName("");
+    closeModal();
   }
 
   function goHome() {
@@ -178,14 +192,17 @@ const Navbar = () => {
         contentLabel="User Modal"
         style={{
           content: {
-            width: "300px",
+            width: "250px",
             height: "350px",
             margin: "auto",
+            // position: "absolute", // Add this line
+            // top: "5px", // Adjust this value as needed
+            // left: "1000px",
             borderRadius: "20px",
             border: " 3px solid #ee0000",
           },
           overlay: {
-            backgroundColor: "rgba(0, 0, 0, 0.75)", // This is black with 75% opacity
+            backgroundColor: "rgba(0, 0, 0, 0.85)", // This is black with 75% opacity
           },
         }}
       >
@@ -193,16 +210,19 @@ const Navbar = () => {
           <MdClose onClick={closeModal} size={24} color="black" />
         </div>
         <h2>Hello, {name}</h2>
+        <BreakPoint />
         <div onClick={goHome}>
-          <MdHome size={24} color="black" />
+          <MdHome size={24} color="#ee0000" />
           <span>Home</span>
         </div>
-        <div >
-          <MdEdit size={24} color="black" />
-          <span>Edit Information</span>
+        <BreakPoint />
+        <div>
+          <MdEdit size={24} color="#ee0000" />
+          <span>Edit Profile</span>
         </div>
+        <BreakPoint />
         <div onClick={handleLogout}>
-          <BiLogOut size={24} color="black" />
+          <BiLogOut size={24} color="#ee0000" />
           <span>Logout</span>
         </div>
       </Modal>

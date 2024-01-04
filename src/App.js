@@ -5,6 +5,7 @@ import Product from './Components/product/Product.jsx';
 import Layout from './Components/layout/Layout';
 import LoginPage from './Components/loginPage/LoginPage.jsx';
 import Register from './Components/register/Register.jsx';
+import Admin from './Components/admin/Admin.jsx';
 import axios from 'axios';
 import UserContext from './Components/Context/UserContext.jsx';
 import React from 'react';
@@ -20,6 +21,8 @@ function App() {
           <Route path='/product' element={<Product />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/admin' element={<Admin />} />
+
         </Routes>
       </Layout>
     </UserContext.Provider>

@@ -1,6 +1,7 @@
 import React from "react";
 import MakeAdminForm from "./MakeAdminForm";
 import styled from "styled-components";
+import AddProduct from "./AddProduct";
 
 const Box = styled.div`
   display: flex;
@@ -14,17 +15,22 @@ const Box = styled.div`
 
 const AdminContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: flexwrap;
   align-items: center;
   margin-top: 20px;
   `;
 function Admin() {
+    
+
   return (
     <Box>
       <h1>Admin Interface</h1>
       <AdminContainer>
         <MakeAdminForm />
       </AdminContainer>
+      <AdminContainer>
+        <AddProduct />
+        </AdminContainer>
     </Box>
   );
 }

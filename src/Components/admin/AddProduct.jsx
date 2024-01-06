@@ -10,12 +10,40 @@ function AddProduct() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    // Firstly image is uploaded to Cloudinary
+    const imageUrls = [];
+    for (let i = 0; i < picture.length; i++) {
+      const imageFormData = new FormData();
+      imageFormData.append("image", picture[i]);
+      try {
+        const imageResponse = await axios.post(
+          "/cloudinary/upload",
+          imageFormData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+        imageUrls.push(imageResponse.data.url); // assuming the URL is returned in the 'url' property
+      } catch (error) {
+        alert("Image upload failed.");
+        return;
+      }
+    }
+
+    // Then, add the product with the image URL
+    const productFormData = new FormData();
+    productFormData.append('imageUrls', JSON.stringify(imageUrls));
+    productFormData.append("name", name);
+    productFormData.append("price", price);
+    productFormData.append("description", description);
+
     try {
-      const response = await axios.post("/admin/addProduct", {
-        name,
-        picture,
-        price,
-        description,
+      const response = await axios.post("/admin/add-product", productFormData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
 
       alert(response.data.message);

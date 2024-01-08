@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
 
 function AddProduct() {
@@ -7,6 +7,7 @@ function AddProduct() {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
 
+  const fileInput = useRef();  // imported ref to clear the file input field
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -34,7 +35,7 @@ function AddProduct() {
 
     // Then, add the product with the image URL
     const productFormData = new FormData();
-    productFormData.append('imageUrls', JSON.stringify(imageUrls));
+    productFormData.append("image", picture[0]);
     productFormData.append("name", name);
     productFormData.append("price", price);
     productFormData.append("description", description);
@@ -47,6 +48,13 @@ function AddProduct() {
       });
 
       alert(response.data.message);
+
+      // Reset the state variables
+      setPicture("");
+      setName("");
+      setPrice("");
+      setDescription("");
+      fileInput.current.value = ""; 
     } catch (error) {
       if (error.response && error.response.data) {
         alert("Server error: " + error.response.data.message);
@@ -61,9 +69,10 @@ function AddProduct() {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Picture URL:
+        Picture:
         <input
           type="file"
+          ref={fileInput}
           onChange={(e) => setPicture(e.target.files)}
           required
           multiple

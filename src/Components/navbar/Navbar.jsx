@@ -110,6 +110,21 @@ const BreakPoint = styled.hr`
   background: red;
 `;
 
+const Search = styled.input`
+  height: 30px;
+  border-radius: 8px;
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+`;
+
+const SpanText = styled.span`
+  color: #ee0000;
+  font-weight: 400;
+  font-size: 18px;
+  padding-left: 20px;
+  padding-buttom: 5px;`;
+
 const Navbar = () => {
   const navigate = useNavigate();
   const [cartCount, setCartCount] = useState(0);
@@ -161,6 +176,7 @@ const Navbar = () => {
           <NavItems to="/contact">Contact</NavItems>
           <NavItems to="/blog">Blog</NavItems>
         </NavLinks>
+        <Search type="search" placeholder="Search for product" />
         <CartContainer>
           <Link to="/login">
             <UserImg onClick={openModal}>
@@ -212,18 +228,18 @@ const Navbar = () => {
         <h2>Hello, {name}</h2>
         <BreakPoint />
         <div onClick={goHome}>
-          <MdHome size={24} color="#ee0000" />
-          <span>Home</span>
+          <MdHome size={24}  color="#ee0000" />
+          <SpanText>Home</SpanText>
         </div>
         <BreakPoint />
         <div>
           <MdEdit size={24} color="#ee0000" />
-          <span>Edit Profile</span>
+          <SpanText>Edit Profile</SpanText>
         </div>
         <BreakPoint />
         <div onClick={handleLogout}>
           <BiLogOut size={24} color="#ee0000" />
-          <span>Logout</span>
+          <SpanText>Logout</SpanText>
         </div>
       </Modal>
     </>

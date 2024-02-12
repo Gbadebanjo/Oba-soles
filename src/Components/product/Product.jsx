@@ -11,27 +11,29 @@ padding-top: 7%;
 `;
 
 const ProductBox = styled.div`
-height: 350px;
-width: 300px;
-margin: 0% 1%;
-justify-content: center;
-align-items: center;
--webkit-box-shadow: 0px -1px 15px -5px #dad0d0;
-box-shadow: 0px -1px 15px -5px #a8a4a4;
+height: 280px;
+width: 200px;
 margin-bottom: 10%;
+display: flex;
+flex-direction: column;
+box-shadow: 2px 5px 10px 1px rgba(0,0,0,0.57);
+-webkit-box-shadow: 2px 5px 10px 1px rgba(0,0,0,0.57);
+-moz-box-shadow: 2px 5px 10px 1px rgba(0,0,0,0.57);
+transition: all 1.2s ease-out;
+
+&:hover {
+  transform: scale(1.1);
+}
 
 @media only screen and (max-width: 768px) {
   height: 350px;
   width: 330px;
   padding-bottom: 20%;
-  -webkit-box-shadow: none;
-  margin-bottom: 1%;
-
 }
 `;
 
 const ProductImage = styled.img`
-height: 100%;
+height: 80%;
 width: 100%;
 object-fit: cover;
 transition: all 350ms;
@@ -43,28 +45,32 @@ border-radius: 7px;
 `;
 
 const ProductName = styled.h3`
-color: black;
-font-size: 1.2rem;
-font-weight: 700;
-display: flex;
-justify-content: center;
-text-align: center;
-align-items: center;
-margin: 0;
-padding: 0;
+font-size: 16px;
+font-weight: 500;
+font-family: "Poppins", sans-serif;
+margin: 0px;
 `;
 
 const ProductPrice = styled.p`
-color: black;
-font-size: 1.2rem;
-font-weight: 700;
-display: flex;
-justify-content: center;
-text-align: center;
-align-items: center;
-margin: 0;
-padding: 0;
+font-size: 14px;
+font-weight: 500;
+margin: 0px;
 `;
+
+const Button = styled.button`
+background-color: #ee0000;
+color: #fff;
+padding: 6px 15px;
+border: none;
+border-radius: 5px;
+font-size: 15px;
+font-weight: 500;
+transition: scale(1.05);
+
+&:hover {
+  transform: scale(1.02);}
+
+`; 
 
 const ProductPage = () => {
   const [products, setProducts] = useState([]);
@@ -88,7 +94,8 @@ const ProductPage = () => {
         <ProductBox key={product._id}>
           <ProductImage src={product.picture} alt={product.name} />
           <ProductName>{product.name}</ProductName>
-          <ProductPrice>{product.price}</ProductPrice>
+          <ProductPrice>₦ {product.price}</ProductPrice>
+          <Button>Add to Cart</Button>
         </ProductBox>
       ))}
     </Container>

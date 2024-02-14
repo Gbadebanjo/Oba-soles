@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
 display: flex;
@@ -74,6 +75,11 @@ transition: scale(1.05);
 
 const ProductPage = () => {
   const [products, setProducts] = useState([]);
+  
+  const navigate = useNavigate();
+  const handleProductClick = (id) => {
+    navigate(`/product/${id}`);
+  }
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -91,7 +97,7 @@ const ProductPage = () => {
   return (
     <Container>
       {products.map((product) => (
-        <ProductBox key={product._id}>
+        <ProductBox key={product._id} onClick={ () => handleProductClick(product._id)}>
           <ProductImage src={product.picture} alt={product.name} />
           <ProductName>{product.name}</ProductName>
           <ProductPrice>₦ {product.price}</ProductPrice>

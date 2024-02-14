@@ -9,6 +9,7 @@ import Admin from './Components/admin/Admin.jsx';
 import axios from 'axios';
 import UserContext from './Components/Context/UserContext.jsx';
 import React from 'react';
+import ProductDetails from './Components/product/ProductDetails.jsx';
 
 axios.defaults.baseURL = 'http://localhost:4000';
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path='/product' element={<Product />} />
+          <Route path='/product/:id' element={<ProductDetails />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/register' element={<Register />} />
           <Route path='/admin' element={<Admin />} />

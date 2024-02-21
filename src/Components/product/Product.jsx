@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import Loader from 'react-loaders';
 
 const Container = styled.div`
 display: flex;
@@ -11,8 +12,25 @@ height: 100vh;
 padding-top: 7%;
 `;
 
+const Button = styled.button`
+background-color: #ee0000;
+color: #fff;
+padding: 6px 15px;
+border: none;
+border-radius: 5px;
+font-size: 15px;
+font-weight: 500;
+transition: scale(1.05);
+display: none;
+
+&:hover {
+  transform: scale(1.02);
+}
+
+`; 
+
 const ProductBox = styled.div`
-height: 280px;
+height: 300px;
 width: 200px;
 margin-bottom: 10%;
 display: flex;
@@ -24,6 +42,9 @@ transition: all 1.2s ease-out;
 
 &:hover {
   transform: scale(1.1);
+}
+&:hover ${Button} {
+  display: block;
 }
 
 @media only screen and (max-width: 768px) {
@@ -58,23 +79,25 @@ font-weight: 500;
 margin: 0px;
 `;
 
-const Button = styled.button`
-background-color: #ee0000;
-color: #fff;
-padding: 6px 15px;
-border: none;
-border-radius: 5px;
-font-size: 15px;
-font-weight: 500;
-transition: scale(1.05);
 
-&:hover {
-  transform: scale(1.02);}
 
-`; 
+const StyledLoader = styled(Loader)`
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  animation: fadeOut 1s 1s;
+  animation-fill-mode: forwards;
+`;
 
 const ProductPage = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
   
   const navigate = useNavigate();
   const handleProductClick = (id) => {
@@ -83,12 +106,14 @@ const ProductPage = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
+      setLoading(true);
       try {
         const response = await axios.get("/products");
         setProducts(response.data);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
+      setLoading(false);
     };
 
     fetchProducts();
@@ -96,15 +121,22 @@ const ProductPage = () => {
 
   return (
     <Container>
-      {products.map((product) => (
+      {loading ? (
+        // <LoaderContainer><Loader type="pacman" active /></LoaderContainer>
+        <StyledLoader type="pacman" />
+
+    ) : (
+      products.map((product) => (
         <ProductBox key={product._id} onClick={ () => handleProductClick(product._id)}>
           <ProductImage src={product.picture} alt={product.name} />
           <ProductName>{product.name}</ProductName>
           <ProductPrice>₦ {product.price}</ProductPrice>
           <Button>Add to Cart</Button>
         </ProductBox>
-      ))}
+      ))
+    )}
     </Container>
+
   );
 };
 

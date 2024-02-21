@@ -24,7 +24,6 @@ function App() {
           <Route path='/login' element={<LoginPage />} />
           <Route path='/register' element={<Register />} />
           <Route path='/admin' element={<Admin />} />
-
         </Routes>
       </Layout>
     </UserContext.Provider>

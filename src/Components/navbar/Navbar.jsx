@@ -28,7 +28,7 @@ const NavContainer = styled.div`
 `;
 
 const BrandName = styled.h1`
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   font-family: "Lucida Calligraphy", "Poppins", sans-serif;
   letter-spacing: -0.2rem;
@@ -37,6 +37,12 @@ const BrandName = styled.h1`
   padding: 0 1rem;
   margin-left: 1%;
   padding-top: 30px;
+`;
+
+const Sole = styled.span`
+  color: #fff;
+  font-weight: 700;
+  // font-size: 2.5rem;
 `;
 
 const NavLinks = styled.ul`
@@ -123,7 +129,8 @@ const SpanText = styled.span`
   font-weight: 400;
   font-size: 18px;
   padding-left: 20px;
-  padding-buttom: 5px;`;
+  padding-buttom: 5px;
+`;
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -165,7 +172,9 @@ const Navbar = () => {
   return (
     <>
       <NavContainer>
-        <BrandName>ObaSoles</BrandName>
+        <BrandName>
+          Oba<Sole>Soles</Sole>
+        </BrandName>
 
         <NavLinks>
           <NavItems to="/" exact>
@@ -228,7 +237,7 @@ const Navbar = () => {
         <h2>Hello, {name}</h2>
         <BreakPoint />
         <div onClick={goHome}>
-          <MdHome size={24}  color="#ee0000" />
+          <MdHome size={24} color="#ee0000" />
           <SpanText>Home</SpanText>
         </div>
         <BreakPoint />

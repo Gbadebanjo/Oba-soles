@@ -11,7 +11,7 @@ import UserContext from './Components/Context/UserContext.jsx';
 import React from 'react';
 import ProductDetails from './Components/product/ProductDetails.jsx';
 
-axios.defaults.baseURL = 'http://localhost:4000';
+axios.defaults.baseURL = 'https://obasole-api-production.up.railway.app/';
 function App() {
   const [name, setName] = React.useState(""); //State is created to manage the name of the user Context that is logged in
   return (

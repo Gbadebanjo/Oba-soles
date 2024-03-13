@@ -9,7 +9,7 @@ import Modal from "react-modal";
 import { MdClose, MdHome, MdEdit } from "react-icons/md";
 import { BiLogOut } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
-
+import ObaLogo from "../../Image/OBA SOLES 1.png";
 const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -132,6 +132,23 @@ const SpanText = styled.span`
   padding-buttom: 5px;
 `;
 
+const NewContainer = styled.div`
+  width: 100%;
+  height: 15vh;
+  background-color: #fff;
+  `;
+
+  const NavLogo = styled.div`
+  width: 20%;
+  height: 100%;
+  `;
+
+  const Logo = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  `;
+
 const Navbar = () => {
   const navigate = useNavigate();
   const [cartCount, setCartCount] = useState(0);
@@ -161,7 +178,7 @@ const Navbar = () => {
     window.location.href = "/";
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     const storedName = localStorage.getItem("name");
 
     if (storedName) {
@@ -171,6 +188,11 @@ const Navbar = () => {
 
   return (
     <>
+    <NewContainer>
+    <NavLogo>
+      <Logo src={ObaLogo} alt="Oba Logo" />
+    </NavLogo>
+    </NewContainer>
       <NavContainer>
         <BrandName>
           Oba<Sole>Soles</Sole>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ShoeImage from "../../Image/Group 54.png";
 
 const Container = styled.div`
   display: flex;
@@ -36,7 +37,7 @@ const About2 = styled.h1`
 const ImgContainer = styled.div`
   width: 50%;
   height: 100%;
-  background-color: #0d0;
+  // background-color: #0d0;
 `;
 
 const Img = styled.img`
@@ -53,7 +54,9 @@ const Section3 = () => {
         <About2>We Provide High Quality Shoes</About2>
       </Text>
       <ImgContainer>
-        <Img src="https://source.unsplash.com/random" alt="random" />
+        <Img src={ShoeImage} alt="shoe" />
+
+        {/* <Img src="https://source.unsplash.com/random" alt="random" /> */}
       </ImgContainer>
     </Container>
   );

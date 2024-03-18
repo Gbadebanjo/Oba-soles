@@ -68,7 +68,6 @@ height: 12%;
 display: flex;
 flex-direction: row;
 color: #000;
-background-color: red;
 margin-top: 20px;
 `;
 
@@ -78,21 +77,17 @@ const UpTo = styled.div`
   justify-content: center;
   text-align: center;
   align-items: center;
-  margin-top: 8px;
+  margin-top: 6px;
   width: 4%;
-  height: 70%;
+  height: 60%;
   padding-left: 10px;
-  // background-color: #d00000;
 `;
 
 const UpToText = styled.p`
 margin: 0;
-font-size: 14px;
+font-size: 17px;
 font-weight: 700;
 font-family: "Poppins";
-// line-height: 12px;
-// text-align: center;
-// justify-content: center;
 height: 50%;
 `;
 
@@ -101,29 +96,35 @@ const PromoText = styled.h1`
   font-weight: 300;
   font-family: "Poppins";
   margin: 0;
+  padding-left: 2px;
+  `;
+
+  const ImgBox = styled.div`
+  width: 50%;
+  height: 80%;
   `;
 
   const PromoImg = styled.img`
-  width: 50%;
+  width: 60%;
   height: 100%;
   object-fit: cover;
-  background-color: #d00000;
   `; 
 
 
 const Button = styled.button`
-  width: 120px;
-  height: 40px;
+  width: 230px;
   color: #fff;
-  background-color: transparent;
+  background-color: #292929;
   border: none;
   border-radius: 10px;
-  font-size: 20px;
-  font-weight: 600;
-  margin-left: 70px;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: "Poppins";
   cursor: pointer;
   transition: all 350ms;
-  border: 1.5px solid #d00000;
+  margin-top: 20px;
+  padding: 5px 15px;
+
   &:hover {
     background-color: #fff;
     color: #000;
@@ -150,7 +151,9 @@ const SectionOne = () => {
             <UpToText>TO</UpToText>
           </UpTo>
           <PromoText>5% Discount</PromoText>
-          <PromoImg src={SalesImg} alt="sales" />
+          <ImgBox>   
+                 <PromoImg src={SalesImg} alt="sales" />
+</ImgBox>
         </Promo>
       <Button>Shop Now</Button>
       </Story>

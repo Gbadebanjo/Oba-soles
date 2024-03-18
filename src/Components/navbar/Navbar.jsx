@@ -29,6 +29,10 @@ const NewContainer = styled.div`
   position: sticky;
   top: 10px;
   z-index: 100;
+
+  @media (max-width: 768px) {
+    height: 15vh;
+  }
 `;
 
 const NavLogo = styled.div`
@@ -61,6 +65,10 @@ const NavLinks = styled.div`
   justify-content: space-between;
   list-style: none;
   width: 70%;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const NavItems = styled(NavLink)`
@@ -93,6 +101,10 @@ const SearchBox = styled.div`
   position: relative;
   animation: ${fadeIn} 0.5s ease forwards;
   animation-delay: 0.4s;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    // background-color: red;
 `;
 
 const NewSearch = styled.input`
@@ -101,6 +113,9 @@ const NewSearch = styled.input`
   border-radius: 8px;
   padding-left: 32px;
   font-size: 1rem;
+
+    @media (max-width: 768px) {
+    margin-top: 15px;
 `;
 
 const StyledSearchIcon = styled(AiOutlineSearch)`
@@ -109,6 +124,13 @@ const StyledSearchIcon = styled(AiOutlineSearch)`
   width: 25px;
   left: 8px;
   top: 38%;
+
+  @media (max-width: 768px) {
+    top: 48%;
+    height: 20px;
+    width: 20px;
+  }
+
 `;
 
 const AccountCart = styled.div`
@@ -133,6 +155,10 @@ const AccountInfo = styled.div`
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 
@@ -174,6 +200,10 @@ const Count = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    left: 50%;
+  }
 `;
 
 const Navbar = () => {

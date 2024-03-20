@@ -10,10 +10,9 @@ import ObaLogo from "../../Image/OBA SOLES 1.png";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaAngleDown } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 
 const fadeIn = keyframes`
-  // from { opacity: 0; transform: translateY(-20px); }
-  // to { opacity: 1; transform: translateY(0); }
   from { transform: translateX(-100%); }
   to { transform: translateX(0); }
 `;
@@ -31,7 +30,36 @@ const NewContainer = styled.div`
   z-index: 100;
 
   @media (max-width: 768px) {
-    height: 15vh;
+    display: none;
+  }
+`;
+
+const MobileContainer = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    height: 20vh;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+`;
+
+const FirstLine = styled.div`
+width: 100%;
+height: 60%
+display: flex;
+justify-content: space-between;
+`;
+
+const StyledFaBars = styled(FaBars)`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    height: 25px;
+    width: 25px;
+    margin-left: 10px;
   }
 `;
 
@@ -42,6 +70,7 @@ const NavLogo = styled.div`
   justify-content: center;
   animation: ${fadeIn} 0.8s ease forwards;
   animation-delay: 0.2s;
+  // background-color: red;
 `;
 
 const Logo = styled.img`
@@ -103,8 +132,7 @@ const SearchBox = styled.div`
   animation-delay: 0.4s;
 
   @media (max-width: 768px) {
-    width: 100%;
-    // background-color: red;
+    display: none;
 `;
 
 const NewSearch = styled.input`
@@ -130,7 +158,6 @@ const StyledSearchIcon = styled(AiOutlineSearch)`
     height: 20px;
     width: 20px;
   }
-
 `;
 
 const AccountCart = styled.div`
@@ -244,44 +271,55 @@ const Navbar = () => {
   }, []);
 
   return (
-    <NewContainer>
-      <NavLogo>
-        <Logo src={ObaLogo} alt="Oba Logo" />
-      </NavLogo>
-      <NavLinkSerachBox>
-        <NavLinks>
-          <NavItems to="/" exact>
-            Home
-          </NavItems>
-          <NavItems index={0} to="/product">
-            Product
-          </NavItems>
-          <NavItems index={1} to="/about">
-            About
-          </NavItems>
-          <NavItems index={2} to="/contact">
-            Contact
-          </NavItems>
-          <NavItems index={3} to="/blog">
-            Blog
-          </NavItems>
-        </NavLinks>
-        <SearchBox>
-          <NewSearch type="search" />
-          <StyledSearchIcon />
-        </SearchBox>
-      </NavLinkSerachBox>
-      <AccountCart>
-        <AccountInfo>
-          <AccountText>My Account</AccountText>
-          <FaAngleDown />
-        </AccountInfo>
-        <CartBox>
-          <StyledFaShoppingCart />
-          <Count>{cartCount}</Count>
-        </CartBox>
-      </AccountCart>
-    </NewContainer>
+    <>
+      <NewContainer>
+        <NavLogo>
+          <Logo src={ObaLogo} alt="Oba Logo" />
+        </NavLogo>
+        <NavLinkSerachBox>
+          <NavLinks>
+            <NavItems to="/" exact>
+              Home
+            </NavItems>
+            <NavItems index={0} to="/product">
+              Product
+            </NavItems>
+            <NavItems index={1} to="/about">
+              About
+            </NavItems>
+            <NavItems index={2} to="/contact">
+              Contact
+            </NavItems>
+            <NavItems index={3} to="/blog">
+              Blog
+            </NavItems>
+          </NavLinks>
+          <SearchBox>
+            <NewSearch type="search" />
+            <StyledSearchIcon />
+          </SearchBox>
+        </NavLinkSerachBox>
+        <AccountCart>
+          <AccountInfo>
+            <AccountText>My Account</AccountText>
+            <FaAngleDown />
+          </AccountInfo>
+          <CartBox>
+            <StyledFaShoppingCart />
+            <Count>{cartCount}</Count>
+          </CartBox>
+        </AccountCart>
+      </NewContainer>
+      <MobileContainer>
+        <FirstLine>
+          <StyledFaBars />
+          <NavLogo>
+          <Logo src={ObaLogo} alt="Oba Logo" />
+        </NavLogo>
+        </FirstLine>
+
+      </MobileContainer>
+    </>
   );
 };
 

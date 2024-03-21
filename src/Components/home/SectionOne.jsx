@@ -21,12 +21,16 @@ const Container = styled.div`
   display: flex;
   justify-content: end;
   align-items: flex-end;
+
+  @media (max-width: 785px) {
+    height: 400px;
+    }
+  }
   
 `;
 
 
 const Story = styled.div`
-// text-shadow: 0 0 20px #000;
 background-color: rgba(226,220,218, 0.9);
 border-radius: 40px 0 0 40px ;
 width: 35%;
@@ -36,7 +40,9 @@ display: flex;
 flex-direction: column;
 
 @media screen and (max-width: 768px) {
-
+width: 60%;
+height: 70%;
+background-color: rgb(228,217,194, 0.9);
 }
 `;
 

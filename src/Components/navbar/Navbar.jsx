@@ -38,28 +38,28 @@ const MobileContainer = styled.div`
   display: none;
 
   @media (max-width: 768px) {
-    height: 20vh;
-    position: relative;
+    height: 22vh;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
   }
 `;
 
 const FirstLine = styled.div`
-width: 100%;
-height: 60%
-display: flex;
-justify-content: space-between;
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 
 const StyledFaBars = styled(FaBars)`
   display: none;
 
   @media (max-width: 768px) {
-    display: block;
+    display: flex;
     height: 25px;
     width: 25px;
-    margin-left: 10px;
+    padding: 30px;
   }
 `;
 
@@ -70,7 +70,12 @@ const NavLogo = styled.div`
   justify-content: center;
   animation: ${fadeIn} 0.8s ease forwards;
   animation-delay: 0.2s;
-  // background-color: red;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    width: 20%;
+    height: 100%;
+  }
 `;
 
 const Logo = styled.img`
@@ -132,18 +137,25 @@ const SearchBox = styled.div`
   animation-delay: 0.4s;
 
   @media (max-width: 768px) {
-    display: none;
+    width: 100%;
+    height: 40%;
+    align-items: flex-start;
 `;
 
 const NewSearch = styled.input`
-  height: 35%;
+  height: 40%;
   width: 100%;
   border-radius: 8px;
   padding-left: 32px;
   font-size: 1rem;
 
-    @media (max-width: 768px) {
-    margin-top: 15px;
+  @media (max-width: 768px) {
+    background-color: #c39f51;
+    border-radius: 20px;
+    padding-left: 8%;
+    height: 60%;
+    width: 80%;
+  }
 `;
 
 const StyledSearchIcon = styled(AiOutlineSearch)`
@@ -154,9 +166,8 @@ const StyledSearchIcon = styled(AiOutlineSearch)`
   top: 38%;
 
   @media (max-width: 768px) {
-    top: 48%;
-    height: 20px;
-    width: 20px;
+    top: 10%;
+    left: 13%;
   }
 `;
 
@@ -314,10 +325,17 @@ const Navbar = () => {
         <FirstLine>
           <StyledFaBars />
           <NavLogo>
-          <Logo src={ObaLogo} alt="Oba Logo" />
-        </NavLogo>
+            <Logo src={ObaLogo} alt="Oba Logo" />
+          </NavLogo>
+          <CartBox>
+            <StyledFaShoppingCart />
+            <Count>{cartCount}</Count>
+          </CartBox>
         </FirstLine>
-
+        <SearchBox>
+          <NewSearch type="search" />
+          <StyledSearchIcon />
+        </SearchBox>
       </MobileContainer>
     </>
   );

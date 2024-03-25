@@ -26,7 +26,7 @@ const NewContainer = styled.div`
   align-items: center;
   text-align: center;
   position: sticky;
-  top: 10px;
+  top: 0;
   z-index: 100;
 
   @media (max-width: 768px) {

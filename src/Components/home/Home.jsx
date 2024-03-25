@@ -11,7 +11,7 @@ const Home = () => {
     <>
       <SectionOne/>
       <SectionTwo/>
-      <SectionThree/> 
+      {/* <SectionThree/>  */}
       <Section3/>
       <SectionFour/>
       <FashionBlog/>

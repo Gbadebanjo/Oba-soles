@@ -24,6 +24,7 @@ const Container = styled.div`
 
   @media (max-width: 785px) {
     height: 400px;
+    // background-object-fit: contain;
     }
   }
   

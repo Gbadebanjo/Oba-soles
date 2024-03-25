@@ -47,7 +47,7 @@ const BoxLink = styled.a`
   font-weight: bold;
   font-weight: 600;
   margin-left: 40px;
-  color: #823f27;
+  color: #c39f51;
   &:hover {
     color: #fff;
   }
@@ -60,11 +60,11 @@ const Box = styled.div`
   border-radius: 10px;
   box-shadow: 0px -1px 15px -5px #a8a4a4;
   -webkit-box-shadow: 0px -1px 15px -5px #dad0d0;
-  border-left: 5px solid #823f27;
+  border-left: 5px solid #c39f51;
   background-size: 200% 100%;
   background-position: right bottom;
   transition: all 1.2s ease-out;
-  color: #823f27;
+  color: #c39f51;
   background-color: #fff;
 
   @media (max-width: 768px) {
@@ -73,11 +73,11 @@ const Box = styled.div`
 
   &:hover {
     background-position: left bottom;
-    transform: scale(1.2);
-    transition: all 350ms;
+    transform: scale(1.05);
+    transition: all 500ms;
     cursor: pointer;
     color: #fff;
-    background-color: #823f27;
+    background-color: #c39f51;
 
     ${BoxImg} img {
       filter: invert(1); // make the image white on hover

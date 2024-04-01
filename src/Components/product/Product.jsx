@@ -53,6 +53,8 @@ const ProductBox = styled.div`
   }
 `;
 
+
+
 const ProductImage = styled.img`
   height: 80%;
   width: 100%;
@@ -60,8 +62,10 @@ const ProductImage = styled.img`
   transition: all 350ms;
   border-radius: 7px;
   &:hover {
-    opacity: 0.7;
+    // opacity: 0.7;
     cursor: pointer;
+    // transform: scale(1.05);
+
   }
 `;
 

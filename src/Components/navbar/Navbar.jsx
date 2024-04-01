@@ -4,7 +4,6 @@ import { NavLink, Navigate } from "react-router-dom";
 import UserContext from "../Context/UserContext";
 import React from "react";
 import Modal from "react-modal";
-import { BiLogOut } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import ObaLogo from "../../Image/OBA SOLES 1.png";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -25,9 +24,15 @@ const NewContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  position: fixed;
+  // top: 0;
+  z-index: 1001;
+
+  &.scrolled {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 10vh;
+  }
 
   @media (max-width: 768px) {
     display: none;
@@ -162,7 +167,7 @@ const StyledSearchIcon = styled(AiOutlineSearch)`
   position: absolute;
   height: 25px;
   width: 25px;
-  left: 8px;
+  left: 2%;
   top: 38%;
 
   @media (max-width: 768px) {
@@ -248,6 +253,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [cartCount, setCartCount] = useState(0);
   const { name, setName } = React.useContext(UserContext);
+  const [scrolled, setScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   function openModal() {
@@ -281,9 +287,26 @@ const Navbar = () => {
     }
   }, []);
 
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      if (isScrolled !== scrolled) {
+        setScrolled(!scrolled);
+      }
+    };
+
+    document.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      // cleanup
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
+
   return (
     <>
-      <NewContainer>
+      <NewContainer className={scrolled ? 'scrolled' : ''}>
         <NavLogo>
           <Logo src={ObaLogo} alt="Oba Logo" />
         </NavLogo>

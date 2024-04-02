@@ -22,7 +22,7 @@ const Container = styled.div`
   justify-content: end;
   align-items: flex-end;
 
-  @media (max-width: 785px) {
+  @media (max-width: 1000px) {
     height: 400px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -43,10 +43,11 @@ padding: 20px 0 0 60px;
 display: flex;
 flex-direction: column;
 
-@media screen and (max-width: 768px) {
-width: 60%;
-height: 70%;
+@media screen and (max-width: 1000px) {
+width: 70%;
+height: 60%;
 background-color: rgb(228,217,194, 0.9);
+padding: 20px 0 0 40px;
 }
 `;
 
@@ -64,11 +65,9 @@ const Discount = styled.h1`
   margin: 0;
   line-height: 0.9;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1000px) {
     font-weight: 600;
-    padding-left: 20px;
-    padding-top: 150px;
-    line-height: none;
+    font-size: 70px;
   }
 `;
 
@@ -80,6 +79,11 @@ align-items: center;
 flex-direction: row;
 color: #000;
 margin-top: 30px;
+
+@media screen and (max-width: 1000px) {
+  height: 20%;
+  margin-top: 10px;
+}
 `;
 
 const UpTo = styled.div`
@@ -99,6 +103,10 @@ font-size: 17px;
 font-weight: 700;
 font-family: "Poppins";
 height: 50%;
+
+@media screen and (max-width: 1000px) {
+  font-size: 13px;
+}
 `;
 
 const PromoText = styled.h1`
@@ -107,7 +115,12 @@ const PromoText = styled.h1`
   font-family: "Poppins";
   margin: 0;
   padding-left: 2px;
-  // width: 70%;
+
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+    padding-left: 7px;
+  }
+
   `;
 
   const ImgBox = styled.div`
@@ -121,6 +134,10 @@ const PromoText = styled.h1`
   width: 60%;
   height: 100%;
   object-fit: cover;
+
+  @media screen and (max-width: 768px) {
+    width: 80%;
+  }
   `; 
 
 
@@ -143,9 +160,11 @@ const Button = styled.button`
     color: #000;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1000px) {
     font-size: 18px;
-    margin-left: 25px;
+    width: 150px;
+    margin: 10px;
+    padding: 10px 15px;
   }
 `;
 

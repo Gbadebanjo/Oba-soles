@@ -22,7 +22,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-top: 6px solid red;
+  border-top: 6px solid #c39f51;
   padding: 40px;
 
   @media only screen and (max-width: 768px) {
@@ -37,7 +37,7 @@ const BrandName = styled.h1`
   font-weight: 700;
   font-family: "Lucida Calligraphy", "Poppins", sans-serif;
   letter-spacing: -0.2rem;
-  color: #ee0000;
+  color: #c39f51;
   text-shadow: 0.1rem 0.1rem 0.1rem #000;
   margin: 0px;
 `;
@@ -46,7 +46,6 @@ const Info = styled.div`
 height: auto;
 weight: 33%
 color: #e4e4e4;
-// background-color: #ff00ff;
 padding: 0px;
 margin: 0px;
 flex: 1;
@@ -73,7 +72,7 @@ const SocialMedia = styled.div`
 `;
 
 const Links = styled.a`
-  background-color: #ee0000;
+  background-color: #c39f51;
   border-radius: 50%;
   padding: 8px;
   font-size: 1.5rem;
@@ -116,7 +115,7 @@ const NavDetails = styled.div`
 const Nav = styled.div`
   height: auto;
   weight: 33%;
-  color: #ee0000;
+  color: #c39f51;
   font-size: 1.7rem;
   font-weight: bold;
 
@@ -134,7 +133,7 @@ const NavItems = styled.div`
   text-decoration: none;
   flex-direction: column;
   &:hover {
-    color: #ee0000;
+    color: #c39f51;
     cursor: pointer;
   }
 `;
@@ -146,7 +145,7 @@ const NavLinks = styled.a`
   padding: 10px 0px 15px 0px;
   text-decoration: none;
   &:hover {
-    color: #ee0000;
+    color: #c39f51;
     cursor: pointer;
   }
 `;
@@ -173,7 +172,7 @@ const NewsLetterInput = styled.input`
 const NewsLetterButton = styled.button`
   padding: 9px;
   margin: 0px 15px;
-  color: #ee0000;
+  color: #c39f51;
   border-radius: 10px;
   font-weight: bold;
 `;
@@ -181,7 +180,7 @@ const NewsLetterButton = styled.button`
 const Heading = styled.h1`
   // font-size: 1.7rem;
   font-weight: bold;
-  color: #ee0000;
+  color: #c39f51;
   padding: 0px;
   margin: 0px 50px;
 `;
@@ -223,12 +222,12 @@ const Footer = () => {
             <FaEnvelope
               style={{ marginRight: "5px" }}
               size={20}
-              color="#ee0000"
+              color="#c39f51"
             />{" "}
             Obasole@gmail.com
           </Contact>
           <Contact>
-            <FaPhone style={{ marginRight: "5px" }} size={20} color="#ee0000" />{" "}
+            <FaPhone style={{ marginRight: "5px" }} size={20} color="#c39f51" />{" "}
             +2347037538575
           </Contact>
         </InfoDetails>
@@ -237,14 +236,14 @@ const Footer = () => {
         <Nav>Navigation</Nav>
         <NavItems>
           <NavLinks href="/">
-            <FaHome style={{ marginRight: "30px" }} size={23} color="#ff4040" />{" "}
+            <FaHome style={{ marginRight: "30px" }} size={23} color="#c39f51" />{" "}
             Home
           </NavLinks>
           <NavLinks href="/product">
             <FaProductHunt
               style={{ marginRight: "30px" }}
               size={23}
-              color="#ff4040"
+              color="#c39f51"
             />{" "}
             Product
           </NavLinks>
@@ -252,19 +251,19 @@ const Footer = () => {
             <FaInfoCircle
               style={{ marginRight: "30px" }}
               size={23}
-              color="#ff4040"
+              color="#c39f51"
             />{" "}
             About
           </NavLinks>
           <NavLinks href="/blog">
-            <FaBlog style={{ marginRight: "30px" }} size={23} color="#ff4040" />{" "}
+            <FaBlog style={{ marginRight: "30px" }} size={23} color="#c39f51" />{" "}
             Blog
           </NavLinks>
           <NavLinks href="/blog">
             <FaAddressCard
               style={{ marginRight: "30px" }}
               size={23}
-              color="#ff4040"
+              color="#c39f51"
             />{" "}
             Contact
           </NavLinks>

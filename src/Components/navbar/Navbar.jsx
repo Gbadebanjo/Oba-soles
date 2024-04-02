@@ -170,6 +170,14 @@ const StyledSearchIcon = styled(AiOutlineSearch)`
   left: 2%;
   top: 38%;
 
+  &.scrolled {
+    top: 35%;
+  }
+
+  &.active {
+    display: none;
+  }
+
   @media (max-width: 768px) {
     top: 10%;
     left: 13%;
@@ -330,7 +338,7 @@ const Navbar = () => {
           </NavLinks>
           <SearchBox>
             <NewSearch type="search" />
-            <StyledSearchIcon />
+            <StyledSearchIcon className={scrolled ? 'scrolled' : ''} />
           </SearchBox>
         </NavLinkSerachBox>
         <AccountCart>

@@ -68,7 +68,7 @@ const Box = styled.div`
   background-color: #fff;
 
   @media (max-width: 768px) {
-    width: 90%;
+    width: 80%;
   }
 
   &:hover {

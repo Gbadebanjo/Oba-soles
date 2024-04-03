@@ -3,13 +3,13 @@ import ShoeImage from "../../Image/mock up shoe.png";
 
 const Container = styled.div`
   display: flex;
-  // flex-wrap: wrap;
   height: 70vh;
   width: 100%;
   background-color: #c39f51;
 
   @media screen and (max-width: 768px) {
-    height: 37vh;
+    height: 40vh;
+    flex-direction: row;
   }
 `;
 
@@ -20,24 +20,26 @@ const Text = styled.div`
   width: 45%;
   font-family: poppins;
   color: #000;
-  padding: 3% 0 0 4%;
+  padding: 4% 2% 0 6%;
 
   @media screen and (max-width: 768px) {
-    width: 45%;
+    width: 50%;
+    padding: 4% 1% 0 2%;
   }
 `;
 
 const About = styled.h1`
-  font-size: 32px;
+  font-size: 3vw;
   font-weight: 500;
+  margin-bottom: 10px;
 
   @media screen and (max-width: 768px) {
     font-size: 20px;
- }
+  }
 `;
 
 const About2 = styled.h1`
-  font-size: 85px;
+  font-size: 5vw;
   font-weight: 700;
   margin: 0;
   padding-bottom: 10px;
@@ -63,26 +65,23 @@ const ImgContainer = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  // background-color: #c39;
-
+  position: relative;
 
   @media screen and (max-width: 768px) {
     height: 100%;
-    width: 55%;
-    justify-content: center;
-    align-items: flex-end;
+    width: 60%;
   }
 `;
 
 const Img = styled.img`
-  height: 90%;
+  height: 80%;
   width: 100%;
   object-fit: contain;
-  
+  position: absolute;
+  bottom: 0;
 
   @media screen and (max-width: 768px) {
-    height: 70%;
-    
+    height: 65%;
   }
 `;
 
@@ -122,7 +121,6 @@ const Section3 = () => {
       </Text>
       <ImgContainer>
         <Img src={ShoeImage} alt="shoe" />
-
       </ImgContainer>
     </Container>
   );

@@ -9,8 +9,7 @@ const Container = styled.div`
   background-color: #c39f51;
 
   @media screen and (max-width: 768px) {
-    height: 40vh;
-
+    height: 37vh;
   }
 `;
 
@@ -45,6 +44,7 @@ const About2 = styled.h1`
 
   @media screen and (max-width: 768px) {
     font-size: 30px;
+    padding-bottom: 5px;
   }
 `;
 

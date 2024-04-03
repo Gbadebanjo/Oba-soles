@@ -5,7 +5,7 @@ import Seed from "../../Image/icons8-seed-48.png";
 import Percentage from "../../Image/icons8-percentage-80.png";
 
 const Container = styled.div`
-  height: 50%;
+  height: 55%;
   width: 100%;
   background-color: #fff;
   display: flex;

@@ -3,12 +3,14 @@ import ShoeImage from "../../Image/mock up shoe.png";
 
 const Container = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   height: 70vh;
+  width: 100%;
   background-color: #c39f51;
 
   @media screen and (max-width: 768px) {
-    height: 50vh;
+    height: 40vh;
+
   }
 `;
 
@@ -19,7 +21,7 @@ const Text = styled.div`
   width: 45%;
   font-family: poppins;
   color: #000;
-  padding: 1% 0 0 4%;
+  padding: 3% 0 0 4%;
 
   @media screen and (max-width: 768px) {
     width: 45%;
@@ -57,22 +59,29 @@ const About3 = styled.h1`
 
 const ImgContainer = styled.div`
   width: 50%;
-  height: 90%;
-  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  // background-color: #c39;
+
 
   @media screen and (max-width: 768px) {
     height: 100%;
+    width: 55%;
+    justify-content: center;
+    align-items: flex-end;
   }
 `;
 
 const Img = styled.img`
-  height: 100%;
+  height: 90%;
   width: 100%;
   object-fit: contain;
-  position: absolute;
-  top: 11%;
+  
 
   @media screen and (max-width: 768px) {
+    height: 70%;
     
   }
 `;

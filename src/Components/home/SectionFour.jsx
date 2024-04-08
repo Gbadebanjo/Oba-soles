@@ -37,6 +37,22 @@ const Wrapper = styled.div`
   height: 76%;
 `;
 
+const SavePercent = styled.div`
+position: absolute;
+width: 25%;
+height: 5%;
+background-color: #c39f51;
+top: 0;
+border-radius: 5px;
+display: none;
+justify-content: center;
+right: 0;
+font-weight: 400;
+// font-family: "Inter";
+color: #fff;
+transition:
+`;
+
 const ImgBox = styled.div`
   height: 350px;
   width: 300px;
@@ -46,6 +62,11 @@ const ImgBox = styled.div`
   -webkit-box-shadow: 0px -1px 15px -5px #dad0d0;
   box-shadow: 0px -1px 15px -5px #a8a4a4;
   margin-bottom: 10%;
+  position: relative; 
+
+  &:hover ${SavePercent} {
+    display: flex;
+  }
 
   @media only screen and (max-width: 768px) {
     height: 350px;
@@ -64,10 +85,12 @@ const Img = styled.img`
   transition: all 350ms;
   border-radius: 7px;
   &:hover {
-    opacity: 0.7;
+    // opacity: 0.7;
     cursor: pointer;
   }
 `;
+
+
 
 const ShoeName = styled.p`
   color: black;
@@ -114,6 +137,7 @@ const SectionFour = () => {
       <Wrapper>
         <ImgBox>
           <Img src={Shoe1} />
+          <SavePercent>SAVE 10%</SavePercent>
           <ShoeName>Men Black Half Shoe </ShoeName>
           <Price>$900</Price>
           <Button href="">Shop Now</Button>

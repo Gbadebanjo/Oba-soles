@@ -39,8 +39,8 @@ const Wrapper = styled.div`
 
 const SavePercent = styled.div`
 position: absolute;
-width: 25%;
-height: 5%;
+width: 30%;
+height: 7%;
 background-color: #c39f51;
 top: 0;
 border-radius: 5px;
@@ -48,9 +48,13 @@ display: none;
 justify-content: center;
 right: 0;
 font-weight: 400;
-// font-family: "Inter";
 color: #fff;
-transition:
+transition: all 350ms;
+
+@media only screen and (max-width: 768px) {
+  width: 25%;
+  height: 5%;
+}
 `;
 
 const ImgBox = styled.div`

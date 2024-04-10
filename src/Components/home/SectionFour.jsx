@@ -4,6 +4,8 @@ import Shoe2 from "../../Image/Sole2.jpg";
 import Shoe3 from "../../Image/Sole3.jpg";
 import Shoe4 from "../../Image/Sole4.jpg";
 import { FaRegHeart } from 'react-icons/fa';
+import ReactStars from "react-rating-stars-component";
+import { useState } from "react";
 
 const Container = styled.div`
   height: auto;
@@ -41,17 +43,18 @@ const Wrapper = styled.div`
 const SavePercent = styled.div`
 position: absolute;
 width: 35%;
-height: 7%;
+height: 8%;
 background-color: #c39f51;
 top: 0;
 border-radius: 5px;
 display: none;
 justify-content: center;
+align-items: center;
 right: 0;
 font-weight: 400;
+font-size: 1.1rem;
 font-type: "Poppins";
 color: #fff;
-transition: all 350ms;
 
 @media only screen and (max-width: 768px) {
   width: 25%;
@@ -90,7 +93,9 @@ const ImgBox = styled.div`
   -webkit-box-shadow: 0px -1px 15px -5px #dad0d0;
   box-shadow: 0px -1px 15px -5px #a8a4a4;
   margin-bottom: 10%;
-  position: relative; 
+  position: relative;
+  transition: all 3.9s ease; 
+  transition-delay: 1s;
 
   &:hover {
     ${SavePercent} {
@@ -162,6 +167,12 @@ const OldPrice = styled.p`
 
 
 const SectionFour = () => {
+  const [rating, setRating] = useState(0);
+
+const ratingChanged = (newRating) => {
+  setRating(newRating);
+};
+
   return (
     <Container>
       <Description>New Arrivals</Description>
@@ -175,6 +186,12 @@ const SectionFour = () => {
           <OldPrice>$1,000</OldPrice>
           <StyledFaHeart/>
           </ShoePrice>
+          <ReactStars
+  count={5}
+  onChange={ratingChanged}
+  size={24}
+  activeColor="#ffd700"
+/>
           
           <Button href="#">Shop Now</Button>
         </ImgBox>

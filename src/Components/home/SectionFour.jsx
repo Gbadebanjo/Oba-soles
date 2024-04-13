@@ -3,7 +3,7 @@ import Shoe1 from "../../Image/Sole1.jpg";
 import Shoe2 from "../../Image/Sole2.jpg";
 import Shoe3 from "../../Image/Sole3.jpg";
 import Shoe4 from "../../Image/Sole4.jpg";
-import { FaRegHeart } from 'react-icons/fa';
+import { FaRegHeart } from "react-icons/fa";
 import ReactStars from "react-rating-stars-component";
 import { useState } from "react";
 
@@ -41,38 +41,38 @@ const Wrapper = styled.div`
 `;
 
 const SavePercent = styled.div`
-position: absolute;
-width: 35%;
-height: 8%;
-background-color: #c39f51;
-top: 0;
-border-radius: 5px;
-display: none;
-justify-content: center;
-align-items: center;
-right: 0;
-font-weight: 400;
-font-size: 1.1rem;
-font-type: "Poppins";
-color: #fff;
+  position: absolute;
+  width: 35%;
+  height: 8%;
+  background-color: #c39f51;
+  top: 0;
+  border-radius: 5px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  right: 0;
+  font-weight: 400;
+  font-size: 1.1rem;
+  font-type: "Poppins";
+  color: #fff;
 
-@media only screen and (max-width: 768px) {
-  width: 25%;
-  height: 5%;
-}
+  @media only screen and (max-width: 768px) {
+    width: 25%;
+    height: 5%;
+  }
 `;
 
 const StyledFaHeart = styled(FaRegHeart)`
-  color:#c39f51;
+  color: #c39f51;
   display: none;
   width: 25px;
   height: 25px;
   position: absolute;
   right: 3%;
   cursor: pointer;
-   `;
+`;
 
-  const Button = styled.a`
+const Button = styled.a`
   color: black;
   display: none;
   justify-content: flex-end;
@@ -94,14 +94,14 @@ const ImgBox = styled.div`
   box-shadow: 0px -1px 15px -5px #a8a4a4;
   margin-bottom: 10%;
   position: relative;
-  transition: all 3.9s ease; 
+  transition: all 3.9s ease;
   transition-delay: 1s;
 
   &:hover {
     ${SavePercent} {
       display: flex;
     }
-  
+
     ${StyledFaHeart} {
       display: block;
     }
@@ -117,7 +117,6 @@ const ImgBox = styled.div`
     padding-bottom: 20%;
     -webkit-box-shadow: none;
     margin-bottom: 1%;
-
   }
 `;
 
@@ -144,34 +143,40 @@ const ShoeName = styled.p`
 `;
 
 const ShoePrice = styled.div`
-display: flex;
-flex-direction: row;
-font-size: 1rem;
-font-weight: 700;
-gap: 10px;
-padding-left: 5px;
-position: relative;
+  display: flex;
+  flex-direction: row;
+  font-size: 1rem;
+  font-weight: 700;
+  gap: 10px;
+  padding: 2px 7px;
+  align-items: center;
+  text-align: center;
+  position: relative;
 `;
 
 const Price = styled.p`
   font-weight: 700;
-  color: black;
-  
+  color: #000;
+  margin: 0;
 `;
 
 const OldPrice = styled.p`
   text-decoration: line-through;
-  color: #9CA3AF;
-  `;
+  color: #9ca3af;
+  margin: 0;
+`;
 
-
+const StarandButton = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
 const SectionFour = () => {
   const [rating, setRating] = useState(0);
 
-const ratingChanged = (newRating) => {
-  setRating(newRating);
-};
+  const ratingChanged = (newRating) => {
+    setRating(newRating);
+  };
 
   return (
     <Container>
@@ -182,41 +187,74 @@ const ratingChanged = (newRating) => {
           <SavePercent>SAVE 10%</SavePercent>
           <ShoeName>Men Black Half Shoe </ShoeName>
           <ShoePrice>
-          <Price>$900</Price>
-          <OldPrice>$1,000</OldPrice>
-          <StyledFaHeart/>
+            <Price>$900</Price>
+            <OldPrice>$1,000</OldPrice>
+            <StyledFaHeart />
           </ShoePrice>
-          <ReactStars
-  count={5}
-  onChange={ratingChanged}
-  size={24}
-  activeColor="#ffd700"
-/>
-          
-          <Button href="#">Shop Now</Button>
+          <StarandButton>
+            <ReactStars
+              count={5}
+              onChange={ratingChanged}
+              size={24}
+              activeColor="#ffd700"
+            />
+            <Button href="#">Shop Now</Button>
+          </StarandButton>
         </ImgBox>
         <ImgBox>
           <Img src={Shoe2} />
           <SavePercent>SAVE 10%</SavePercent>
           <ShoeName>Men Grey Half Shoe </ShoeName>
-          <ShoePrice><Price>$1000</Price>
-          <OldPrice>$1,100</OldPrice>
-          <StyledFaHeart/>
+          <ShoePrice>
+            <Price>$1000</Price>
+            <OldPrice>$1,100</OldPrice>
+            <StyledFaHeart />
           </ShoePrice>
-          
-          <Button href="#">Shop Now</Button>
+          <StarandButton>
+            <ReactStars
+              count={5}
+              onChange={ratingChanged}
+              size={24}
+              activeColor="#ffd700"
+            />
+            <Button href="#">Shop Now</Button>
+          </StarandButton>
         </ImgBox>
         <ImgBox>
           <Img src={Shoe3} />
           <ShoeName>Men Brown Half Shoe </ShoeName>
-          <Price>$1,000</Price>
-          <Button href="">Shop Now</Button>
+          <ShoePrice>
+            <Price>$1000</Price>
+            <OldPrice>$1,100</OldPrice>
+            <StyledFaHeart />
+          </ShoePrice>
+          <StarandButton>
+            <ReactStars
+              count={5}
+              onChange={ratingChanged}
+              size={24}
+              activeColor="#ffd700"
+            />
+            <Button href="#">Shop Now</Button>
+          </StarandButton>{" "}
         </ImgBox>
         <ImgBox>
           <Img src={Shoe4} />
           <ShoeName>Unisex Brown Sandal </ShoeName>
-          <Price>$600</Price>
-          <Button href="">Shop Now</Button>
+          <ShoePrice>
+            <Price>$1000</Price>
+            <OldPrice>$1,100</OldPrice>
+            <StyledFaHeart />
+          </ShoePrice>
+          <StarandButton>
+            <ReactStars
+              count={5}
+              onChange={ratingChanged}
+              size={24}
+              activeColor="#ffd700"
+            />
+            <Button href="#">Shop Now</Button>
+          </StarandButton>
         </ImgBox>
       </Wrapper>
     </Container>

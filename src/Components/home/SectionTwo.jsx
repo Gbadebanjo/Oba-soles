@@ -33,12 +33,21 @@ const BoxImg = styled.div`
   &:hover img {
     filter: invert(1); // make the image white on hover
   }
+
+  @media (max-width: 768px) {
+    margin-top: 6px;
+    margin-left: 20px;
+  }
 `;
 
 const BoxText = styled.p`
   font-size: 20px;
   font-weight: 600;
   margin-left: 40px;
+
+  @media (max-width: 768px) {
+    margin-left: 25px;
+  }
 `;
 
 const BoxLink = styled.a`
@@ -50,6 +59,10 @@ const BoxLink = styled.a`
   color: #c39f51;
   &:hover {
     color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 25px;
   }
 `;
 
@@ -68,7 +81,9 @@ const Box = styled.div`
   background-color: #fff;
 
   @media (max-width: 768px) {
-    width: 80%;
+    width: 90%;
+    height: 200px;
+    margin: 10px 20px;
   }
 
   &:hover {

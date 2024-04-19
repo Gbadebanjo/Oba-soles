@@ -46,6 +46,7 @@ const MobileContainer = styled.div`
     height: 22vh;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
 `;
 

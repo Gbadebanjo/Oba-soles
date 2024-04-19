@@ -64,7 +64,7 @@ const StyledFaBars = styled(FaBars)`
     display: flex;
     height: 25px;
     width: 25px;
-    padding: 30px;
+    padding: 35px;
   }
 `;
 
@@ -145,6 +145,7 @@ const SearchBox = styled.div`
     width: 100%;
     height: 40%;
     align-items: flex-start;
+  }
 `;
 
 const NewSearch = styled.input`
@@ -158,15 +159,15 @@ const NewSearch = styled.input`
     background-color: #c39f51;
     border-radius: 20px;
     padding-left: 8%;
-    height: 60%;
-    width: 80%;
+    height: 65%;
+    width: 90%;
   }
 `;
 
 const StyledSearchIcon = styled(AiOutlineSearch)`
   position: absolute;
-  height: 25px;
-  width: 25px;
+  height: 30px;
+  width: 30px;
   left: 2%;
   top: 38%;
 
@@ -180,7 +181,7 @@ const StyledSearchIcon = styled(AiOutlineSearch)`
 
   @media (max-width: 768px) {
     top: 10%;
-    left: 13%;
+    left: 8%;
   }
 `;
 
@@ -257,64 +258,78 @@ const Count = styled.span`
   }
 `;
 
+const StyledModal = styled(Modal)`
+  width: 60%;
+  height: 100vh;
+  background-color: #cbab69;
+  display: flex;
+  border-radius: 0 15px 15px 0;
+  outline: none;
+  `;
+
+const ModalContainer = styled.div`
+// height: 20vh;
+// weight: 100%;
+gap: 30px;
+// background-color: blue;
+display: flex;
+flex-direction: column;
+`;
+
+const UserImg = styled.img``;
+
 const Navbar = () => {
   const navigate = useNavigate();
   const [cartCount, setCartCount] = useState(0);
   const { name, setName } = React.useContext(UserContext);
   const [scrolled, setScrolled] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  function openModal() {
-    if (name) {
-      setIsModalOpen(true);
-    } else {
-      navigate("/login");
-    }
-  }
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
 
-  function closeModal() {
-    setIsModalOpen(false);
-    navigate("/");
-  }
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
 
-  function handleLogout() {
-    localStorage.clear();
-    setName("");
-    closeModal();
-  }
+  // function handleLogout() {
+  //   localStorage.clear();
+  //   setName("");
+  //   closeModal();
+  // }
 
   function goHome() {
     window.location.href = "/";
   }
 
-  useEffect(() => {
-    const storedName = localStorage.getItem("name");
+  // useEffect(() => {
+  //   const storedName = localStorage.getItem("name");
 
-    if (storedName) {
-      setName(storedName);
-    }
-  }, []);
+  //   if (storedName) {
+  //     setName(storedName);
+  //   }
+  // }, []);
 
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const isScrolled = window.scrollY > 50;
+  //     if (isScrolled !== scrolled) {
+  //       setScrolled(!scrolled);
+  //     }
+  //   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
-      if (isScrolled !== scrolled) {
-        setScrolled(!scrolled);
-      }
-    };
+  //   document.addEventListener("scroll", handleScroll, { passive: true });
 
-    document.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      // cleanup
-      document.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrolled]);
+  //   return () => {
+  //     // cleanup
+  //     document.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [scrolled]);
 
   return (
     <>
-      <NewContainer className={scrolled ? 'scrolled' : ''}>
+      <NewContainer className={scrolled ? "scrolled" : ""}>
         <NavLogo>
           <Logo src={ObaLogo} alt="Oba Logo" />
         </NavLogo>
@@ -338,7 +353,7 @@ const Navbar = () => {
           </NavLinks>
           <SearchBox>
             <NewSearch type="search" />
-            <StyledSearchIcon className={scrolled ? 'scrolled' : ''} />
+            <StyledSearchIcon className={scrolled ? "scrolled" : ""} />
           </SearchBox>
         </NavLinkSerachBox>
         <AccountCart>
@@ -354,7 +369,7 @@ const Navbar = () => {
       </NewContainer>
       <MobileContainer>
         <FirstLine>
-          <StyledFaBars />
+          <StyledFaBars onClick={openModal} />
           <NavLogo>
             <Logo src={ObaLogo} alt="Oba Logo" />
           </NavLogo>
@@ -368,6 +383,32 @@ const Navbar = () => {
           <StyledSearchIcon />
         </SearchBox>
       </MobileContainer>
+      <StyledModal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Menu Modal"
+      >
+        <ModalContainer>
+          <NavItems to="/" exact>
+            Home
+          </NavItems>
+          <NavItems index={0} to="/product">
+            Product
+          </NavItems>
+          <NavItems index={1} to="/about">
+            About
+          </NavItems>
+          <NavItems index={2} to="/contact">
+            Contact
+          </NavItems>
+          <NavItems index={3} to="/blog">
+            Blog
+          </NavItems>
+          <NavItems index={4} onClick={goHome}>
+            Logout
+          </NavItems>
+        </ModalContainer>
+      </StyledModal>
     </>
   );
 };

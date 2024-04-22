@@ -54,6 +54,7 @@ const FirstLine = styled.div`
   width: 100%;
   height: 60%;
   display: flex;
+  align-items: center;
   flex-direction: row;
   justify-content: space-between;
 `;
@@ -159,7 +160,7 @@ const NewSearch = styled.input`
   @media (max-width: 768px) {
     background-color: #c39f51;
     border-radius: 20px;
-    padding-left: 8%;
+    padding-left: 10%;
     height: 65%;
     width: 90%;
   }
@@ -181,7 +182,7 @@ const StyledSearchIcon = styled(AiOutlineSearch)`
   }
 
   @media (max-width: 768px) {
-    top: 10%;
+    top: 5%;
     left: 8%;
   }
 `;
@@ -266,15 +267,15 @@ const StyledModal = styled(Modal)`
   display: flex;
   border-radius: 0 15px 15px 0;
   outline: none;
-  `;
+`;
 
 const ModalContainer = styled.div`
-// height: 20vh;
-// weight: 100%;
-gap: 30px;
-// background-color: blue;
-display: flex;
-flex-direction: column;
+  // height: 20vh;
+  // weight: 100%;
+  gap: 30px;
+  // background-color: blue;
+  display: flex;
+  flex-direction: column;
 `;
 
 const UserImg = styled.img``;

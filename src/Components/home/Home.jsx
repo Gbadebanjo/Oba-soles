@@ -12,7 +12,7 @@ const Home = () => {
       <SectionTwo/>
       <Section3/>
       <SectionFour/>
-      <SectionFive/>
+      {/* <SectionFive/> */}
       <FashionBlog/>
     </>
   );
